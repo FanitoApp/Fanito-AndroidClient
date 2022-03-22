@@ -1,4 +1,4 @@
-package io.android.fanito_androidclient.ui.local
+package io.android.fanito_androidclient.date.local
 
 import android.content.Context
 import android.content.SharedPreferences

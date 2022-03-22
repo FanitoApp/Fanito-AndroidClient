@@ -1,4 +1,4 @@
-package io.android.fanito_androidclient.ui
+package io.android.fanito_androidclient.date
 
 import java.util.HashMap
 
