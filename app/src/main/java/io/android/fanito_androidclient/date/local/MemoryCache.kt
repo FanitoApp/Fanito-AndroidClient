@@ -1,4 +1,4 @@
-package io.android.fanito_androidclient.date
+package io.android.fanito_androidclient.date.local
 
 import java.util.HashMap
 
@@ -18,9 +18,9 @@ object MemoryCache {
 
     // The personal information of the user
     private var userPersonal: UserPersonalResponse? = null
-    fun getUserPersonal() = this.userPersonal
+    fun getUserPersonal() = userPersonal
     fun setUserPersonal(userPersonal: UserPersonalResponse?) =
-        userPersonal?.let { this.userPersonal = it }
+        userPersonal?.let { MemoryCache.userPersonal = it }
 
     fun clean() {
         userPortfolioMap.clear()

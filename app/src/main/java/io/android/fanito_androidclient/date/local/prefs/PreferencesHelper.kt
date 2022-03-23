@@ -1,4 +1,4 @@
-package io.android.fanito_androidclient.date.local
+package io.android.fanito_androidclient.date.local.prefs
 
 interface PreferencesHelper {
 
