@@ -3,10 +3,10 @@ package io.android.fanito_androidclient.date.model.api.response
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import io.fanito.android.R
-import io.fanito.android.utils.AppConstants.POLL_STATE_ACTIVE
-import io.fanito.android.utils.AppConstants.POLL_STATE_ENDED
-import io.fanito.android.utils.AppConstants.POLL_STATE_PENDING
-import io.fanito.android.utils.IComparable
+import io.android.fanito_androidclient.AppConstants.POLL_STATE_ACTIVE
+import io.android.fanito_androidclient.AppConstants.POLL_STATE_ENDED
+import io.android.fanito_androidclient.AppConstants.POLL_STATE_PENDING
+import io.android.fanito_androidclient.IComparable
 
 data class GetPollsResponse(
     @Expose @SerializedName("totalCount") val totalCount: Int?,

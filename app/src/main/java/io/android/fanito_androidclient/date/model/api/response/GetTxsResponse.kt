@@ -3,10 +3,10 @@ package io.android.fanito_androidclient.date.model.api.response
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import io.fanito.android.R
-import io.fanito.android.utils.AppConstants.TX_TYPE_DEPOSIT
-import io.fanito.android.utils.AppConstants.TX_TYPE_PURCHASE
-import io.fanito.android.utils.AppConstants.TX_TYPE_WITHDRAW
-import io.fanito.android.utils.IComparable
+import io.android.fanito_androidclient.AppConstants.TX_TYPE_DEPOSIT
+import io.android.fanito_androidclient.AppConstants.TX_TYPE_PURCHASE
+import io.android.fanito_androidclient.AppConstants.TX_TYPE_WITHDRAW
+import io.android.fanito_androidclient.IComparable
 
 data class GetTxsResponse(
     @Expose @SerializedName("totalCount") val totalCount: Int?,
