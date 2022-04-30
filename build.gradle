@@ -4,3 +4,41 @@ plugins {
     id 'com.android.library' version '7.0.4' apply false
     id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
 }
+ext {
+    // Sdk and tools
+    minSdkVersion = 16
+    targetSdkVersion = 31
+    compileSdkVersion = 31
+    buildToolsVersion = '30.0.2'
+    constraintLayoutVersion = '2.1.1'
+
+    // App dependencies
+    materialVersion = '1.4.0'
+    timberVersion = '4.7.1'
+    coroutine_version = '1.4.1'
+    room_version = '2.3.0'
+    gson_version = '2.8.6'
+    glide_version = '4.11.0'
+    retrofit_version = '2.9.0'
+    paging_version = '3.1.0'
+    view_pager_version = '1.0.0'
+    pinview_version = '1.4.4'
+    circle_imageview_version = '3.1.0'
+    dot_indicator_version = '4.2'
+
+    // Test dependencies
+    junitVersion = '4.13.2'
+    espressoVersion = '3.4.0'
+    mockitoVersion = '2.15.0'
+
+/////////////////////////////////////////////
+
+    // App dependencies
+    supportLibraryVersion = '1.1.0'
+    vectorDrawableVersion = '1.0.1'
+
+    dagger2Version = '2.16'
+    placeholderviewVersion = '0.6.1'
+    debugDBVersion = '1.0.3'
+    lifecycleVersion = '2.0.0'
+}
