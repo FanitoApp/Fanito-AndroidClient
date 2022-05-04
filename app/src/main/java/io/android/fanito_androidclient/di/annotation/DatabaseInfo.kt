@@ -1,7 +1,7 @@
-package io.android.fanito_androidclient.di.annotation
+package io.fanito.android.di.annotation
 
 import javax.inject.Qualifier
 
 @Qualifier
 @kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
-annotation
+annotation class DatabaseInfo
