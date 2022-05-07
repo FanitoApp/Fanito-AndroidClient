@@ -1,4 +1,4 @@
-package io.fanito.android.ui.base
+package io.android.fanito_androidclient.ui
 
 import android.app.Activity
 import android.os.Bundle
@@ -12,8 +12,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.DialogFragment
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import io.fanito.android.R
-import io.fanito.android.utils.extensions.toast
+import io.android.fanito_androidclient.R
+import io.android.fanito_androidclient.utils.extensions.toast
 
 abstract class BaseBottomSheetDialog<T : ViewDataBinding?, V : BaseViewModel<*>?> :
   BottomSheetDialogFragment(), BaseNavigator {
