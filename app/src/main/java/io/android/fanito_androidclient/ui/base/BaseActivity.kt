@@ -1,4 +1,4 @@
-package io.android.fanito_androidclient.ui
+package io.android.fanito_androidclient.ui.base
 
 import android.annotation.TargetApi
 import android.app.ProgressDialog

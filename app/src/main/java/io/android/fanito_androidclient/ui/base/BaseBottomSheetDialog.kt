@@ -1,4 +1,4 @@
-package io.android.fanito_androidclient.ui
+package io.android.fanito_androidclient.ui.base
 
 import android.app.Activity
 import android.os.Bundle
