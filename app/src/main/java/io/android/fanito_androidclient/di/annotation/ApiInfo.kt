@@ -1,4 +1,4 @@
-package io.fanito.android.di.annotation
+package io.android.fanito_androidclient.di.annotation
 
 import javax.inject.Qualifier
 

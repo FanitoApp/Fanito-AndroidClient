@@ -1,7 +1,7 @@
 package io.android.fanito_androidclient.ui.base
 
 import androidx.lifecycle.ViewModel
-import io.fanito.android.data.DataManager
+import io.android.fanito_androidclient.data.DataManager
 import java.lang.ref.WeakReference
 
 abstract class BaseViewModel<N : BaseNavigator>(val dataManager: DataManager) : ViewModel() {

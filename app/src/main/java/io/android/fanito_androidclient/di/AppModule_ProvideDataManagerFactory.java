@@ -6,8 +6,8 @@ import javax.inject.Provider;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
 import dagger.internal.Preconditions;
-import io.fanito.android.data.AppDataManager;
-import io.fanito.android.data.DataManager;
+import io.android.fanito_androidclient.data.AppDataManager;
+import io.android.fanito_androidclient.data.DataManager;
 
 @DaggerGenerated
 @SuppressWarnings({

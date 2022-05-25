@@ -5,7 +5,7 @@ import javax.inject.Provider;
 
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
-import io.fanito.android.data.DataManager;
+import io.android.fanito_androidclient.data.DataManager;
 
 @DaggerGenerated
 @SuppressWarnings({

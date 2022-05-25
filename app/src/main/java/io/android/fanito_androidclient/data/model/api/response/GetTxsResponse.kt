@@ -2,7 +2,7 @@ package io.android.fanito_androidclient.data.model.api.response
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import io.fanito.android.R
+import io.android.fanito_androidclient.R
 import io.android.fanito_androidclient.AppConstants.TX_TYPE_DEPOSIT
 import io.android.fanito_androidclient.AppConstants.TX_TYPE_PURCHASE
 import io.android.fanito_androidclient.AppConstants.TX_TYPE_WITHDRAW

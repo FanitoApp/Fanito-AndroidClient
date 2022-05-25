@@ -6,8 +6,8 @@ import javax.inject.Provider;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
 import dagger.internal.Preconditions;
-import io.fanito.android.data.local.prefs.AppPreferencesHelper;
-import io.fanito.android.data.local.prefs.PreferencesHelper;
+import io.android.fanito_androidclient.data.local.prefs.AppPreferencesHelper;
+import io.android.fanito_androidclient.data.local.prefs.PreferencesHelper;
 
 @DaggerGenerated
 @SuppressWarnings({
