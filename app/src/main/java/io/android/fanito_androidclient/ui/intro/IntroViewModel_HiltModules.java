@@ -1,6 +1,7 @@
-package io.fanito.android.ui.intro;
+package io.android.fanito_androidclient.ui.intro;
 
 import androidx.lifecycle.ViewModel;
+
 import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
@@ -12,7 +13,6 @@ import dagger.hilt.codegen.OriginatingElement;
 import dagger.multibindings.IntoMap;
 import dagger.multibindings.IntoSet;
 import dagger.multibindings.StringKey;
-import java.lang.String;
 
 @OriginatingElement(
     topLevelClass = IntroViewModel.class
@@ -29,7 +29,7 @@ public final class IntroViewModel_HiltModules {
 
     @Binds
     @IntoMap
-    @StringKey("io.fanito.android.ui.intro.IntroViewModel")
+    @StringKey("io.android.fanito_androidclient.ui.intro.IntroViewModel")
     @HiltViewModelMap
     public abstract ViewModel binds(IntroViewModel vm);
   }
@@ -44,7 +44,7 @@ public final class IntroViewModel_HiltModules {
     @IntoSet
     @HiltViewModelMap.KeySet
     public static String provide() {
-      return "io.fanito.android.ui.intro.IntroViewModel";
+      return "io.android.fanito_androidclient.ui.intro.IntroViewModel";
     }
   }
 }
