@@ -1,9 +1,9 @@
-package io.fanito.android.ui.main.home.fan_tokens
+package io.android.fanito_androidclient.ui.main.home.fan_tokens
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import io.fanito.android.data.DataManager
-import io.fanito.android.data.model.api.response.GetTokensResponse
+import io.android.fanito_androidclient.data.DataManager
+import io.android.fanito_androidclient.data.model.api.response.GetTokensResponse
 
 class FanTokensDataSource(private val dataManager: DataManager) :
   PagingSource<Int, GetTokensResponse.Token>() {
