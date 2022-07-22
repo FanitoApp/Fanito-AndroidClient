@@ -1,4 +1,4 @@
-package io.android.fanito_androidclient.ui.main;
+package io.android.fanito_androidclient.ui.main.home;
 
 import android.content.Context;
 
