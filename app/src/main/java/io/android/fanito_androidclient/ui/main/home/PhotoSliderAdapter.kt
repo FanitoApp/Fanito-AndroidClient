@@ -3,9 +3,9 @@ package io.android.fanito_androidclient.ui.main.home
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import io.fanito.android.data.model.others.PhotoSlider
-import io.fanito.android.databinding.ItemSliderBinding
-import io.fanito.android.ui.base.BaseViewHolder
+import io.android.fanito_androidclient.data.model.others.PhotoSlider
+import io.android.fanito_androidclient.databinding.ItemSliderBinding
+import io.android.fanito_androidclient.ui.base.BaseViewHolder
 
 
 class PhotoSliderAdapter(
