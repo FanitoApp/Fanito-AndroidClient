@@ -16,8 +16,8 @@ import dagger.hilt.android.internal.managers.FragmentComponentManager;
 import dagger.hilt.internal.GeneratedComponentManagerHolder;
 import dagger.hilt.internal.Preconditions;
 import dagger.hilt.internal.UnsafeCasts;
-import io.fanito.android.ui.base.BaseFragment;
-import io.fanito.android.ui.base.BaseViewModel;
+import io.android.fanito_androidclient.ui.base.BaseFragment;
+import io.android.fanito_androidclient.ui.base.BaseViewModel;
 
 /**
  * A generated base class to be extended by the @dagger.hilt.android.AndroidEntryPoint annotated class. If using the Gradle plugin, this is swapped as the base class via bytecode transformation.
