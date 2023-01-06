@@ -10,6 +10,6 @@ import dagger.hilt.internal.GeneratedEntryPoint;
 )
 @GeneratedEntryPoint
 @InstallIn(FragmentComponent.class)
-public interface android.fanito_androidclient {
+public interface WalletFragment_GeneratedInjector {
   void injectWalletFragment(WalletFragment walletFragment);
 }
