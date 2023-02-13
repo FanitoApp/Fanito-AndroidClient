@@ -1,8 +1,8 @@
-package io.fanito.android.ui.sample.dialog
+package io.android.fanito_androidclient.ui.sample.dialog
 
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.fanito.android.data.DataManager
-import io.fanito.android.ui.base.BaseViewModel
+import io.android.fanito_androidclient.data.DataManager
+import io.android.fanito_androidclient.ui.base.BaseViewModel
 import javax.inject.Inject
 
 @HiltViewModel

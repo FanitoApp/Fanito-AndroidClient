@@ -13,7 +13,7 @@ import dagger.hilt.codegen.OriginatingElement;
 import dagger.multibindings.IntoMap;
 import dagger.multibindings.IntoSet;
 import dagger.multibindings.StringKey;
-import io.fanito.android.ui.sample.dialog.SampleBottomSheetDialogViewModel;
+import io.android.fanito_androidclient.ui.sample.dialog.SampleBottomSheetDialogViewModel;
 
 @OriginatingElement(
     topLevelClass = SampleBottomSheetDialogViewModel.class
@@ -30,7 +30,7 @@ public final class SampleBottomSheetDialogViewModel_HiltModules {
 
     @Binds
     @IntoMap
-    @StringKey("io.fanito.android.ui.sample.dialog.SampleBottomSheetDialogViewModel")
+    @StringKey("io.android.fanito_androidclient.ui.sample.dialog.SampleBottomSheetDialogViewModel")
     @HiltViewModelMap
     public abstract ViewModel binds(SampleBottomSheetDialogViewModel vm);
   }
@@ -45,7 +45,7 @@ public final class SampleBottomSheetDialogViewModel_HiltModules {
     @IntoSet
     @HiltViewModelMap.KeySet
     public static String provide() {
-      return "io.fanito.android.ui.sample.dialog.SampleBottomSheetDialogViewModel";
+      return "io.android.fanito_androidclient.ui.sample.dialog.SampleBottomSheetDialogViewModel";
     }
   }
 }

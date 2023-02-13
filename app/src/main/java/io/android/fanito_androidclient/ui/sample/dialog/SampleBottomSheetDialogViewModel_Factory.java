@@ -5,8 +5,8 @@ import javax.inject.Provider;
 
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
-import io.fanito.android.data.DataManager;
-import io.fanito.android.ui.sample.dialog.SampleBottomSheetDialogViewModel;
+import io.android.fanito_androidclient.data.DataManager;
+import io.android.fanito_androidclient.ui.sample.dialog.SampleBottomSheetDialogViewModel;
 
 @DaggerGenerated
 @SuppressWarnings({

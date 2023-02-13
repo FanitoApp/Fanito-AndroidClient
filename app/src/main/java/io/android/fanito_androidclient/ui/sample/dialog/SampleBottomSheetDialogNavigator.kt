@@ -1,6 +1,6 @@
-package io.fanito.android.ui.sample.dialog
+package io.android.fanito_androidclient.ui.sample.dialog
 
-import io.fanito.android.ui.base.BaseNavigator
+import io.android.fanito_androidclient.ui.base.BaseNavigator
 
 interface SampleBottomSheetDialogNavigator : BaseNavigator {
 }
