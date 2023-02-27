@@ -1,12 +1,12 @@
-package io.fanito.android.ui.splash
+package io.android.fanito_androidclient.ui.splash
 
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
-import io.fanito.android.data.local.prefs.AppPreferencesHelper
-import io.fanito.android.ui.intro.IntroActivity
-import io.fanito.android.ui.main.MainActivity
+import io.android.fanito_androidclient.data.local.prefs.AppPreferencesHelper
+import io.android.fanito_androidclient.ui.intro.IntroActivity
+import io.android.fanito_androidclient.ui.main.MainActivity
 import javax.inject.Inject
 
 @AndroidEntryPoint

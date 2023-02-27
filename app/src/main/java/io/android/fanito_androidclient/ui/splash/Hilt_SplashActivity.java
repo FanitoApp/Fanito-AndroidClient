@@ -1,4 +1,4 @@
-package io.fanito.android.ui.splash;
+package io.android.fanito_androidclient.ui.splash;
 
 import android.content.Context;
 import androidx.activity.contextaware.OnContextAvailableListener;
@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProvider;
 import dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories;
 import dagger.hilt.android.internal.managers.ActivityComponentManager;
 import dagger.hilt.internal.GeneratedComponentManagerHolder;
-import dagger.hilt.internal.UnsafeCasts;
+import dagger.hilt.internal.UnsafeCasts;import io.android.fanito_androidclient.ui.splash.SplashActivity;import io.android.fanito_androidclient.ui.splash.SplashActivity_GeneratedInjector;
 import java.lang.Object;
 import java.lang.Override;
 
