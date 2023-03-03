@@ -1,4 +1,4 @@
-package io.fanito.android.utils.enums
+package io.android.fanito_androidclient.utils.enums
 
 sealed class DataResult {
   data class Loading(var loading: Boolean) : DataResult()
