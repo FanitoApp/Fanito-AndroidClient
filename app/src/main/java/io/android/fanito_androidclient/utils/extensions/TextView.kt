@@ -1,4 +1,4 @@
-package io.fanito.android.utils.extensions
+package io.android.fanito_androidclient.utils.extensions
 
 import android.graphics.LinearGradient
 import android.graphics.Shader
@@ -6,7 +6,7 @@ import android.text.TextPaint
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
-import io.fanito.android.R
+import io.android.fanito_androidclient.R
 
 
 @BindingAdapter("gradient")

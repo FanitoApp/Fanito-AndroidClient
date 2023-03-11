@@ -1,4 +1,4 @@
-package io.fanito.android.utils.extensions
+package io.android.fanito_androidclient.utils.extensions
 
 import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator

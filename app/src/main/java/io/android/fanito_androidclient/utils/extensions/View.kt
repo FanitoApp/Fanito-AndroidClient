@@ -1,4 +1,4 @@
-package io.fanito.android.utils.extensions
+package io.android.fanito_androidclient.utils.extensions
 
 import android.animation.Animator
 import android.animation.ValueAnimator
