@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="item"
+      type="io.fanito.android.data.model.api.response.GetTxsResponse.Tx" />
+
+    <import type="java.text.DateFormat" />
+
+    <import type="io.fanito.android.utils.AppConstants" />
+
+  </data>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/_6sdp"
+    android:background="@drawable/bg_item_wallet_history"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingHorizontal="@dimen/_18sdp"
+    android:paddingVertical="@dimen/_6sdp">
+
+    <TextView
+      style="@style/BoldTextView"
+      digitSeparatorText="@{item.amount}"
+      suffix="@{@string/rial}"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginRight="@dimen/_4sdp"
+      android:textColor="@color/grey_300"
+      android:textSize="@dimen/_11ssp"
+      app:layout_constraintRight_toLeftOf="@+id/token_photo"
+      app:layout_constraintTop_toBottomOf="@+id/token_name"
+      tools:text="مبلغ توکن" />
+
+    <LinearLayout
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="@dimen/_7sdp"
+      android:layout_weight="1"
+      android:gravity="right"
+      android:orientation="vertical">
+
+      <TextView
+        android:id="@+id/type"
+        style="@style/RegularTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintRight_toLeftOf="@+id/token_photo"
+        app:layout_constraintTop_toBottomOf="@+id/token_name"
+        tools:text="وضعیت تراکنش" />
+
+      <TextView
+        style="@style/RegularTextView"
+        setPersianDate="@{item.createdAt}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue_grey_300"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintRight_toLeftOf="@+id/token_photo"
+        app:layout_constraintTop_toBottomOf="@+id/token_name"
+        tools:text="تاریخ تراکنش" />
+
+    </LinearLayout>
+
+    <ImageView
+      android:id="@+id/img_type"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      tools:src="@drawable/ic_deposit" />
+
+  </LinearLayout>
+</layout>

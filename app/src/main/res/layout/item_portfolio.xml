@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="item"
+      type="io.fanito.android.data.model.api.response.PortfolioResponse" />
+
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/_4sdp"
+    android:background="@drawable/bg_user_token">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+      android:id="@+id/token_photo"
+      imageUrl="@{item.logoURL}"
+      android:layout_width="@dimen/_44sdp"
+      android:layout_height="@dimen/_44sdp"
+      android:layout_marginTop="@dimen/_8sdp"
+      android:layout_marginRight="@dimen/_12sdp"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+      android:id="@+id/token_name"
+      style="@style/BoldTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="@dimen/_4sdp"
+      android:text="@{item.title}"
+      android:textColor="@color/white"
+      android:textSize="@dimen/_11ssp"
+      app:layout_constraintBottom_toBottomOf="@+id/token_photo"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintLeft_toRightOf="@+id/layout_token"
+      app:layout_constraintRight_toLeftOf="@+id/token_photo"
+      app:layout_constraintTop_toTopOf="@id/token_photo"
+      app:layout_constraintVertical_bias="0.15"
+      tools:text="نام توکن" />
+
+    <TextView
+      android:id="@+id/token_price"
+      style="@style/RegularTextView"
+      digitSeparatorText="@{item.price}"
+      suffix="@{@string/rial}"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginRight="@dimen/_4sdp"
+      android:textColor="@color/grey_300"
+      android:textSize="@dimen/_9ssp"
+      app:layout_constraintRight_toLeftOf="@+id/token_photo"
+      app:layout_constraintTop_toBottomOf="@+id/token_name"
+      tools:text="مبلغ توکن" />
+
+    <LinearLayout
+      android:id="@+id/layout_token"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/_12sdp"
+      android:layout_marginTop="@dimen/_8sdp"
+      android:background="@drawable/bg_hexagonal_normal"
+      android:gravity="center"
+      android:orientation="horizontal"
+      android:paddingHorizontal="@dimen/_6sdp"
+      android:paddingVertical="@dimen/_4sdp"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <TextView
+        style="@style/RegularTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/_3sdp"
+        android:text="@string/token"
+        android:textColor="@color/grey_500"
+        android:textSize="@dimen/_9ssp" />
+
+      <TextView
+        android:id="@+id/token"
+        style="@style/BoldTextView"
+        digitSeparatorText="@{item.balance}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/_3sdp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_11ssp"
+        tools:text="تعداد توکن" />
+
+      <ImageView
+        android:layout_width="@dimen/_16sdp"
+        android:layout_height="@dimen/_16sdp"
+        android:src="@drawable/ic_copper" />
+
+    </LinearLayout>
+
+    <TextView
+      android:id="@+id/total_token_price"
+      style="@style/RegularTextView"
+      digitSeparatorText="@{item.price * item.balance}"
+      suffix="@{@string/rial}"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="top|center"
+      android:paddingBottom="@dimen/_12sdp"
+      android:textColor="@color/grey_300"
+      android:textSize="@dimen/_9ssp"
+      app:layout_constraintLeft_toLeftOf="@+id/layout_token"
+      app:layout_constraintTop_toBottomOf="@+id/layout_token"
+      tools:text="کل مبلغ توکن" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

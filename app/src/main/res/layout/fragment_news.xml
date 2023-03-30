@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="io.fanito.android.ui.main.news.NewsViewModel" />
+
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_background">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:background="@drawable/bg_detail"
+            android:paddingBottom="@dimen/_12sdp"
+            >
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <ImageView
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="180sp"
+                android:foreground="@drawable/fg_voting_banner"
+                tools:src="@drawable/breaking_news_3"
+                android:src="@{viewModel.new.drawable}"
+                android:scaleType="centerCrop"
+                android:layerType="software"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:clickable="true"
+                android:foreground="?actionBarItemBackground"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/ic_arrow_right"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/banner"
+                android:text="Initial Release Date"
+                android:paddingBottom="@dimen/_15sdp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:paddingTop="@dimen/_15sdp"
+                android:paddingRight="@dimen/_25sdp"
+                android:paddingLeft="@dimen/_25sdp"
+                android:orientation="vertical"
+                >
+
+            <TextView
+                android:id="@+id/newsTitle"
+                style="@style/RegularTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/grey_500"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintTop_toBottomOf="@id/banner"
+                android:text="Headline"
+                android:layout_gravity="right"
+                tools:text ="@{viewModel.new.title}"
+                android:layout_marginBottom="@dimen/_15sdp"
+
+                />
+                <TextView
+                    android:id="@+id/newsDecription"
+                    style="@style/NewsTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grey_500"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintTop_toBottomOf="@id/banner"
+                    android:text="شرح خبر"
+                    tools:text="@{viewModel.new.description}"
+                    android:layout_gravity="right"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    />
+            </LinearLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

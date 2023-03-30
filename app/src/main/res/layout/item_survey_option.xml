@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="item"
+      type="io.fanito.android.data.model.api.response.PollOptionsResponse.Option" />
+
+    <import type="android.view.View" />
+
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="@dimen/_155sdp"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="@dimen/_6sdp">
+
+    <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/hGuideline"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      app:layout_constraintGuide_percent="0.4" />
+
+    <View
+      android:id="@+id/shadow"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:background="@drawable/bg_vote_shadow"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="@+id/option_background"
+      app:layout_constraintRight_toRightOf="@+id/option_background"
+      app:layout_constraintTop_toBottomOf="@+id/hGuideline" />
+
+    <View
+      android:id="@+id/option_background"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_marginBottom="@dimen/_19sdp"
+      android:background="@{item.isSelected || item.isSending || item.isVoted ? @drawable/bg_vote_selected : @drawable/bg_vote_unselected, default=@drawable/bg_vote_unselected}"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+      android:id="@+id/layout_option_photo"
+      android:layout_width="0dp"
+      android:layout_height="@dimen/_155sdp"
+      android:layout_marginHorizontal="@dimen/_3sdp"
+      android:layout_marginTop="@dimen/_3sdp"
+      android:padding="@dimen/_4sdp"
+      app:cardCornerRadius="@dimen/_10sdp"
+      app:cardElevation="0dp"
+      app:layout_constraintLeft_toLeftOf="@+id/option_background"
+      app:layout_constraintRight_toRightOf="@+id/option_background"
+      app:layout_constraintTop_toTopOf="@id/option_background">
+
+      <ImageView
+        imageUrl="@{item.pictureURL}"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+      android:id="@+id/layout_option"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="@dimen/_6sdp"
+      android:layout_marginTop="@dimen/_6sdp"
+      android:layout_marginBottom="@dimen/_16sdp"
+      android:gravity="center_horizontal|top"
+      android:orientation="vertical"
+      app:layout_constraintBottom_toBottomOf="@id/option_background"
+      app:layout_constraintLeft_toLeftOf="@id/option_background"
+      app:layout_constraintRight_toRightOf="@id/option_background"
+      app:layout_constraintTop_toBottomOf="@+id/layout_option_photo"
+      app:layout_constraintVertical_bias="0">
+
+      <TextView
+        android:id="@+id/choice_right_title"
+        style="@style/ExtraBoldTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_4sdp"
+        android:layout_marginVertical="@dimen/_6sdp"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/_6sdp"
+        android:text="@{item.title}"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_11ssp"
+        tools:text="عنوان گزینه راست" />
+
+      <TextView
+        android:id="@+id/choice_right_description"
+        style="@style/RegularTextView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_4sdp"
+        android:layout_marginVertical="@dimen/_6sdp"
+        android:layout_weight="1"
+        android:gravity="top|center"
+        android:lineSpacingExtra="@dimen/_6sdp"
+        android:minLines="2"
+        android:text="@{item.description}"
+        android:textColor="@color/grey_500"
+        android:textSize="@dimen/_9ssp"
+        tools:text="توضیحات گزینه" />
+
+      <ProgressBar
+        android:id="@+id/choice_right_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_6sdp"
+        android:layout_marginHorizontal="@dimen/_4sdp"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:progress="@{item.weight}"
+        android:progressDrawable="@drawable/gradient_progress"
+        android:rotation="180"
+        tools:progress="50" />
+
+      <TextView
+        android:id="@+id/choice_right_vote_token"
+        style="@style/RegularTextView"
+        gradient="@{true}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_4sdp"
+        android:layout_marginVertical="@dimen/_6sdp"
+        android:gravity="center"
+        android:text="@{item.count +` `+ @string/vote +`، `+ item.tokens +` `+ @string/token }"
+        android:textSize="@dimen/_11ssp"
+        tools:text="رای، توکن" />
+
+      <TextView
+        android:id="@+id/choice_right_percent"
+        style="@style/RegularTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_4sdp"
+        android:layout_marginVertical="@dimen/_6sdp"
+        android:gravity="center"
+        android:text="@{item.weight + `%`}"
+        android:textColor="@color/grey_500"
+        android:textSize="@dimen/_11ssp"
+        tools:text="درصد" />
+
+      <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginVertical="@dimen/_16sdp">
+
+        <ImageView
+          android:layout_width="@dimen/_25sdp"
+          android:layout_height="@dimen/_25sdp"
+          android:layout_gravity="center_horizontal"
+          android:src="@drawable/ic_check_circle"
+          android:visibility="@{item.isVoted ? View.VISIBLE : View.GONE, default=gone}"
+          tools:visibility="visible" />
+
+        <TextView
+          android:id="@+id/vote"
+          style="@style/ExtraBoldTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_gravity="center_horizontal"
+          android:background="@drawable/bg_orange_yellow_gradient"
+          android:clickable="true"
+          android:gravity="center"
+          android:paddingHorizontal="@dimen/_12sdp"
+          android:text="@string/send"
+          android:textSize="@dimen/_11ssp"
+          android:textColor="@color/light_purple_primary_variant"
+          android:visibility="@{item.isSelected ? View.VISIBLE : View.GONE, default=gone}" />
+
+        <ProgressBar
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_gravity="center_horizontal"
+          android:indeterminateTint="@color/yellow"
+          android:visibility="@{item.isSending ? View.VISIBLE : View.GONE, default=gone}" />
+
+      </FrameLayout>
+
+    </LinearLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

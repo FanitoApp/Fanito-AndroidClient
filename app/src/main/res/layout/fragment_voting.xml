@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="viewModel"
+      type="io.fanito.android.ui.main.surveys.voting.VotingViewModel" />
+
+    <import type="android.view.View" />
+
+  </data>
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingBottom="@dimen/_12sdp">
+
+      <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+      <ImageView
+        android:id="@+id/banner"
+        imageUrl="@{viewModel.pollIssuer.pictureURL}"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:foreground="@drawable/fg_voting_banner"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/voting_title"
+        app:layout_constraintTop_toTopOf="parent" />
+
+      <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:clickable="true"
+        android:foreground="?actionBarItemBackground"
+        android:padding="@dimen/_6sdp"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+      <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/club_icon"
+        imageUrl="@{viewModel.poll.pictureURL}"
+        placeHolder="@{@drawable/img_profile_holder}"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:layout_marginRight="@dimen/_12sdp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back"
+        tools:src="@drawable/img_profile_holder" />
+
+      <TextView
+        android:id="@+id/club_name"
+        style="@style/BoldTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:text="@{viewModel.pollIssuer.name}"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/club_icon"
+        app:layout_constraintRight_toLeftOf="@+id/club_icon"
+        app:layout_constraintTop_toTopOf="@id/club_icon"
+        tools:text="عنوان سازنده نظرسنجی" />
+
+      <!--
+      <LinearLayout
+        android:id="@+id/layout_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_12sdp"
+        android:layout_marginRight="@dimen/_9ssp"
+        android:background="@drawable/bg_hexagonal"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:text="LV2"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/club_icon"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/club_icon">
+
+        <TextView
+          android:id="@+id/user_level"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:drawableLeft="@drawable/ic_level"
+          android:drawablePadding="@dimen/_5sdp"
+          android:gravity="center"
+          android:text="LV2"
+          android:textColor="@color/white"
+          android:textSize="@dimen/_9ssp" />
+
+      </LinearLayout>
+      -->
+
+      <LinearLayout
+        android:id="@+id/layout_token"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_12sdp"
+        android:background="@drawable/bg_hexagonal_normal"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_7sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/club_icon"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/club_icon">
+
+        <TextView
+          style="@style/RegularTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginRight="@dimen/_3sdp"
+          android:text="@string/token"
+          android:textColor="@color/grey_500"
+          android:textSize="@dimen/_9ssp" />
+
+        <TextView
+          android:id="@+id/token"
+          style="@style/BoldTextView"
+          digitSeparatorText="@{viewModel.requiredTokenBalance}"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginRight="@dimen/_3sdp"
+          android:textColor="@color/white"
+          android:textSize="@dimen/_11ssp" />
+
+        <ImageView
+          android:layout_width="@dimen/_16sdp"
+          android:layout_height="@dimen/_16sdp"
+          android:src="@drawable/ic_copper" />
+
+      </LinearLayout>
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_voting_club_description"
+        app:layout_constraintBottom_toBottomOf="@+id/divider"
+        app:layout_constraintTop_toTopOf="@+id/voting_title" />
+
+      <TextView
+        android:id="@+id/voting_title"
+        style="@style/ExtraBoldTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:text="@{viewModel.poll.title}"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="@+id/layout_token"
+        app:layout_constraintRight_toRightOf="@+id/club_icon"
+        app:layout_constraintTop_toBottomOf="@id/club_icon"
+        tools:text="عنوان نظرسنجی" />
+
+      <TextView
+        android:id="@+id/voting_description"
+        style="@style/RegularTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:lineSpacingExtra="@dimen/_6sdp"
+        android:text="@{viewModel.poll.description}"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="@+id/layout_token"
+        app:layout_constraintRight_toRightOf="@+id/club_icon"
+        app:layout_constraintTop_toBottomOf="@id/voting_title"
+        tools:text="توضیحات نظرسنجی" />
+
+      <ImageView
+        android:id="@+id/img_participants"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:src="@drawable/ic_two_users"
+        app:layout_constraintRight_toRightOf="@id/club_icon"
+        app:layout_constraintTop_toBottomOf="@+id/voting_description" />
+
+      <View
+        android:id="@+id/participants_divider"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="@dimen/_3sdp"
+        android:layout_marginRight="@dimen/_7sdp"
+        android:alpha="0.3"
+        android:background="@color/grey_400"
+        app:layout_constraintBottom_toBottomOf="@id/img_participants"
+        app:layout_constraintRight_toLeftOf="@id/img_participants"
+        app:layout_constraintTop_toTopOf="@id/img_participants" />
+
+      <TextView
+        android:id="@+id/participants_count"
+        style="@style/RegularTextView"
+        digitSeparatorText="@{viewModel.poll.participantCount}"
+        suffix="@{@string/participants}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/_7sdp"
+        android:textColor="@color/grey_500"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintBottom_toBottomOf="@id/img_participants"
+        app:layout_constraintRight_toLeftOf="@+id/participants_divider"
+        tools:text="تعداد شرکت کننده" />
+
+      <TextView
+        android:id="@+id/token_count"
+        style="@style/RegularTextView"
+        digitSeparatorText="@{viewModel.poll.totalTokens}"
+        suffix="@{@string/token}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/_16sdp"
+        android:textColor="@color/grey_500"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintBaseline_toBaselineOf="@id/participants_count"
+        app:layout_constraintRight_toLeftOf="@+id/participants_count"
+        tools:text="تعداد توکن" />
+
+      <TextView
+        android:id="@+id/timer"
+        style="@style/ExtraBoldTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/_16sdp"
+        android:text="@{viewModel.pollState}"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintBaseline_toBaselineOf="@id/participants_count"
+        app:layout_constraintLeft_toLeftOf="@id/layout_token"
+        tools:text="وضعیت نظرسنجی" />
+
+      <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:layout_constraintLeft_toLeftOf="@id/layout_token"
+        app:layout_constraintRight_toRightOf="@id/club_icon"
+        app:layout_constraintTop_toBottomOf="@id/img_participants" />
+
+      <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:layout_constraintTop_toBottomOf="@+id/divider">
+
+        <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/options"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+          app:reverseLayout="true"
+          tools:itemCount="4"
+          tools:listitem="@layout/item_survey_option" />
+
+        <ProgressBar
+          android:id="@+id/loading_options"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:indeterminateTint="@color/purple_banner" />
+
+        <TextView
+          android:id="@+id/message_options"
+          style="@style/BoldTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:textColor="@color/white"
+          android:textSize="@dimen/_12ssp"
+          tools:text="پیام مربوط به دریافت گزینه ها" />
+
+      </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </ScrollView>
+
+</layout>

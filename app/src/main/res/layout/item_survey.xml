@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="item"
+      type="io.fanito.android.data.model.api.response.GetPollsResponse.Poll" />
+
+    <import type="java.text.DateFormat" />
+
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_18sdp"
+    android:layout_marginVertical="@dimen/_6sdp"
+    android:background="@drawable/bg_item_dark_with_stroke"
+    android:padding="@dimen/_12sdp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+      android:id="@+id/club_icon"
+      imageUrl="@{item.pictureURL}"
+      placeHolder="@{@drawable/img_profile_holder}"
+      android:layout_width="@dimen/_33sdp"
+      android:layout_height="@dimen/_33sdp"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:src="@drawable/img_profile_holder" />
+
+    <TextView
+      android:id="@+id/club_name"
+      style="@style/BoldTextView"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/_8sdp"
+      android:layout_marginTop="@dimen/_4sdp"
+      android:layout_marginRight="@dimen/_8sdp"
+      android:gravity="center|right"
+      android:text="@{item.title}"
+      android:textColor="@color/white"
+      android:textSize="@dimen/_11ssp"
+      app:layout_constraintBottom_toBottomOf="@id/club_icon"
+      app:layout_constraintLeft_toRightOf="@+id/date"
+      app:layout_constraintRight_toLeftOf="@+id/club_icon"
+      app:layout_constraintTop_toTopOf="@id/club_icon"
+      tools:text="Club name" />
+
+    <TextView
+      android:id="@+id/date"
+      style="@style/RegularTextView"
+      setPersianDate="@{item.startTime}"
+      shortDateFormat="@{true}"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:drawableLeft="@drawable/ic_calendar"
+      android:drawablePadding="@dimen/_4sdp"
+      android:gravity="left"
+      android:textColor="@color/blue_grey_300"
+      android:textSize="@dimen/_11ssp"
+      app:layout_constraintBaseline_toBaselineOf="@id/club_name"
+      app:layout_constraintHorizontal_bias="0"
+      app:layout_constraintLeft_toLeftOf="parent"
+      tools:text="Survey date" />
+
+    <TextView
+      android:id="@+id/description"
+      style="@style/RegularTextView"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/_12sdp"
+      android:background="@drawable/bg_purple"
+      android:gravity="right"
+      android:lineSpacingExtra="@dimen/_2sdp"
+      android:paddingHorizontal="@dimen/_25sdp"
+      android:paddingVertical="@dimen/_8sdp"
+      android:text="@{item.description}"
+      android:textColor="@color/white"
+      android:textSize="@dimen/_10ssp"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/club_icon"
+      tools:text="Survey description" />
+
+    <TextView
+      android:id="@+id/state"
+      style="@style/ExtraBoldTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/_8sdp"
+      android:gravity="center"
+      android:textSize="@dimen/_9ssp"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/description"
+      tools:text="Survey status" />
+
+    <TextView
+      android:id="@+id/tokens_count"
+      style="@style/RegularTextView"
+      digitSeparatorText="@{item.totalTokens}"
+      suffix="@{@string/token}"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="@color/grey_500"
+      android:textSize="@dimen/_9ssp"
+      app:layout_constraintBaseline_toBaselineOf="@id/state"
+      app:layout_constraintLeft_toLeftOf="parent"
+      tools:text="Token count" />
+
+    <View
+      android:id="@+id/tokens_divider"
+      android:layout_width="@dimen/_2sdp"
+      android:layout_height="0dp"
+      android:layout_marginVertical="@dimen/_1sdp"
+      android:layout_marginLeft="@dimen/_6sdp"
+      android:alpha="0.3"
+      android:background="@color/grey_400"
+      app:layout_constraintBottom_toBottomOf="@id/tokens_count"
+      app:layout_constraintLeft_toRightOf="@id/tokens_count"
+      app:layout_constraintTop_toTopOf="@id/tokens_count" />
+
+    <TextView
+      android:id="@+id/participants_count"
+      style="@style/RegularTextView"
+      digitSeparatorText="@{item.participantCount}"
+      suffix="@{@string/participants}"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/_6sdp"
+      android:textColor="@color/grey_500"
+      android:textSize="@dimen/_9ssp"
+      app:layout_constraintBaseline_toBaselineOf="@id/state"
+      app:layout_constraintLeft_toRightOf="@+id/tokens_divider"
+      tools:text="Number of participants" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

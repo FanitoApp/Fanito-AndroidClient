@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="item"
+      type="io.fanito.android.data.model.api.response.GetTokensResponse.Token" />
+
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_7sdp"
+    android:background="@drawable/bg_item_dark_with_stroke"
+    android:padding="@dimen/_12sdp">
+
+    <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/vGuideline"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.cardview.widget.CardView
+      android:id="@+id/parent_club_photo"
+      android:layout_width="@dimen/_155sdp"
+      android:layout_height="@dimen/_92sdp"
+      app:cardCornerRadius="@dimen/_16sdp"
+      app:cardElevation="0dp"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <ImageView
+        android:id="@+id/club_photo"
+        imageUrl="@{item.imageURL}"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    </androidx.cardview.widget.CardView>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+      android:id="@+id/club_icon"
+      imageUrl="@{item.logoURL}"
+      android:layout_width="@dimen/_32sdp"
+      android:layout_height="@dimen/_32sdp"
+      android:layout_marginRight="@dimen/_12sdp"
+      android:layout_marginBottom="@dimen/_minus16sdp"
+      app:layout_constraintBottom_toBottomOf="@+id/parent_club_photo"
+      app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+      android:id="@+id/club_name"
+      style="@style/ExtraBoldTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/_7sdp"
+      android:gravity="center"
+      android:text="@{item.title}"
+      android:textColor="@color/white"
+      android:textSize="@dimen/_12ssp"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/club_icon"
+      tools:text="نام باشگاه" />
+
+    <TextView
+      android:id="@+id/token_price"
+      style="@style/ExtraBoldTextView"
+      digitSeparatorText="@{item.price}"
+      gradient="@{true}"
+      suffix="@{@string/tooman}"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/_10sdp"
+      android:gravity="center"
+      android:textColor="@color/white"
+      android:textSize="@dimen/_12ssp"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintLeft_toRightOf="@id/vGuideline"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/club_name"
+      tools:text="قیمت توکن" />
+
+    <TextView
+      android:id="@+id/token_percent"
+      style="@style/ExtraBoldTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:textColor="@color/pink_500"
+      android:textSize="@dimen/_12ssp"
+      android:visibility="gone"
+      app:layout_constraintHorizontal_bias="0"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toLeftOf="@id/vGuideline"
+      app:layout_constraintTop_toTopOf="@id/token_price"
+      tools:text="-2.27%" />
+
+    <View
+      android:id="@+id/divider"
+      android:layout_width="0dp"
+      android:layout_height="@dimen/_1sdp"
+      android:layout_marginVertical="@dimen/_4sdp"
+      android:alpha="0.3"
+      android:background="@color/grey_400"
+      app:layout_constraintLeft_toLeftOf="@+id/token_percent"
+      app:layout_constraintRight_toRightOf="@+id/token_price"
+      app:layout_constraintTop_toBottomOf="@+id/token_price" />
+
+    <ImageView
+      android:id="@+id/img_participants"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/_6sdp"
+      android:src="@drawable/ic_two_users"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <View
+      android:id="@+id/participants_divider"
+      android:layout_width="@dimen/_2sdp"
+      android:layout_height="0dp"
+      android:layout_marginVertical="@dimen/_2sdp"
+      android:layout_marginRight="@dimen/_12sdp"
+      android:alpha="0.3"
+      android:background="@color/grey_400"
+      app:layout_constraintBottom_toBottomOf="@id/img_participants"
+      app:layout_constraintRight_toLeftOf="@id/img_participants"
+      app:layout_constraintTop_toTopOf="@id/img_participants" />
+
+    <TextView
+      android:id="@+id/participants_count"
+      style="@style/RegularTextView"
+      digitSeparatorText="@{item.userBalance}"
+      suffix="@{@string/token}"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/_6sdp"
+      android:layout_marginRight="@dimen/_12sdp"
+      android:gravity="center"
+      android:textColor="@color/grey_500"
+      android:textSize="@dimen/_11ssp"
+      app:layout_constraintBottom_toBottomOf="@id/img_participants"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toLeftOf="@+id/participants_divider"
+      tools:text="تعداد توکن" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

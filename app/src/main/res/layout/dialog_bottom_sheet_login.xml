@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="viewModel"
+      type="io.fanito.android.ui.intro.login.LoginViewModel" />
+
+    <import type="io.fanito.android.utils.enums.Validation" />
+
+    <import type="io.fanito.android.ui.intro.login.LoginViewModel.LoginState" />
+
+    <import type="android.view.View" />
+
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:paddingHorizontal="@dimen/_33sdp">
+
+    <View
+      android:id="@+id/thumb"
+      android:layout_width="@dimen/_45sdp"
+      android:layout_height="@dimen/_2sdp"
+      android:layout_marginTop="@dimen/_7sdp"
+      android:alpha="0.5"
+      android:background="@color/light_purple_primary_variant"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+      android:id="@+id/title"
+      style="@style/RegularTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/_16sdp"
+      android:gravity="center"
+      android:lineSpacingExtra="@dimen/_3sdp"
+      android:text="@{viewModel.loginState == LoginState.LOADING ? @string/please_wait : viewModel.loginState == LoginState.PHONE ? @string/enter_your_phone_number : @string/enter_your_verify_code, default=@string/enter_your_phone_number}"
+      android:textColor="@color/white"
+      android:textSize="@dimen/_11ssp"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/thumb" />
+
+    <FrameLayout
+      android:id="@+id/field_layout"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/_24sdp"
+      android:animateLayoutChanges="true"
+      android:visibility="@{viewModel.loginState == LoginState.LOADING ? View.INVISIBLE : View.VISIBLE, default=visible}"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/title">
+
+      <EditText
+        android:id="@+id/phone"
+        style="@style/RegularTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="@string/phone"
+        android:inputType="phone"
+        android:maxLength="13"
+        android:onTextChanged="@{viewModel.onPhoneChanged}"
+        android:text="@={viewModel.phoneNumber}"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14ssp"
+        android:visibility="@{viewModel.loginState == LoginState.PHONE ? View.VISIBLE : View.INVISIBLE, default=visible}"
+        app:backgroundTint="@color/selector_color_text_field_tint" />
+
+      <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="@{viewModel.loginState == LoginState.VERIFY ? View.VISIBLE : View.INVISIBLE, default=invisible}"
+        tools:visibility="visible">
+
+        <com.chaos.view.PinView
+          android:id="@+id/pin"
+          style="@style/PinWidget.PinView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerHorizontal="true"
+          android:layout_marginBottom="@dimen/_12sdp"
+          android:fontFamily="@font/iran_yekan_mobile_bold"
+          android:gravity="center"
+          android:inputType="number"
+          android:onTextChanged="@{viewModel.onVerifyCodeChanged}"
+          android:text="@={viewModel.verifyCode}"
+          android:textColor="@color/white"
+          android:textSize="@dimen/_14ssp"
+          android:textStyle="bold"
+          app:cursorColor="@color/light_purple_primary_variant"
+          app:cursorWidth="@dimen/_2sdp"
+          app:hideLineWhenFilled="false"
+          app:itemCount="4"
+          app:itemHeight="@dimen/_33sdp"
+          app:itemSpacing="@dimen/_10sdp"
+          app:itemWidth="@dimen/_32sdp"
+          app:lineColor="@color/light_purple_primary_variant"
+          app:lineWidth="@dimen/_2sdp"
+          app:viewType="line" />
+
+        <TextView
+          android:id="@+id/timer"
+          style="@style/RegularTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/pin"
+          android:layout_alignLeft="@+id/pin"
+          android:background="?selectableItemBackground"
+          android:clickable="@{viewModel.resendCodeEnable}"
+          android:onClick="@{viewModel.onResendClick}"
+          android:padding="@dimen/_4sdp"
+          android:text="@{viewModel.remainingTimer}"
+          android:textColor="@color/white"
+          android:textSize="@dimen/_11ssp" />
+
+        <TextView
+          android:id="@+id/edit"
+          style="@style/RegularTextView"
+          gradient="@{true}"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/pin"
+          android:layout_alignRight="@+id/pin"
+          android:background="?selectableItemBackground"
+          android:clickable="true"
+          android:onClick="@{viewModel.onEditClick}"
+          android:padding="@dimen/_4sdp"
+          android:text="@string/edit_number"
+          android:textColor="@color/white"
+          android:textSize="@dimen/_11ssp" />
+
+      </RelativeLayout>
+
+    </FrameLayout>
+
+    <com.google.android.material.button.MaterialButton
+      android:id="@+id/next"
+      style="@style/ExtraBoldTextView"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginVertical="@dimen/_25sdp"
+      android:background="@{viewModel.validation == Validation.VALID ? @drawable/bg_orange_yellow_gradient : @drawable/bg_purple, default=@drawable/bg_purple}"
+      android:clickable="true"
+      android:onClick="@{viewModel.onNextClick}"
+      android:paddingVertical="@dimen/_10sdp"
+      android:text="@string/next"
+      android:textColor="@color/white"
+      android:textSize="@dimen/_12ssp"
+      android:visibility="@{viewModel.loginState == LoginState.LOADING ? View.INVISIBLE : View.VISIBLE, default=visible}"
+      app:backgroundTint="@null"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/field_layout" />
+
+    <ProgressBar
+      android:id="@+id/loading"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginVertical="@dimen/_25sdp"
+      android:indeterminateTint="@color/yellow"
+      android:paddingVertical="@dimen/_10sdp"
+      android:visibility="@{viewModel.loginState == LoginState.LOADING ? View.VISIBLE : View.INVISIBLE, default=invisible}"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

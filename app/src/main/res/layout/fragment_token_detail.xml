@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.fanito.android.ui.main.deatil.TokenDetailViewModel" />
+
+        <import type="android.view.View" />
+
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/bg_detail"
+        android:paddingBottom="@dimen/_12sdp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/banner"
+        imageUrl="@{viewModel.tokenIssuer.pictureURL}"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:foreground="@drawable/fg_voting_banner"
+        android:scaleType="centerCrop"
+        android:layerType="software"
+        app:layout_constraintBottom_toTopOf="@+id/club_description"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:clickable="true"
+        android:foreground="?actionBarItemBackground"
+        android:padding="@dimen/_6sdp"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/club_icon"
+        imageUrl="@{viewModel.token.logoURL}"
+        placeHolder="@{@drawable/img_profile_holder}"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:layout_marginRight="@dimen/_12sdp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back"
+        tools:src="@drawable/img_profile_holder" />
+
+    <TextView
+        style="@style/BoldTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        tools:text="@{viewModel.tokenIssuer.name}"
+        app:layout_constraintBottom_toBottomOf="@+id/club_icon"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintRight_toLeftOf="@+id/club_icon"
+        app:layout_constraintTop_toTopOf="@id/club_icon"
+        android:text="نام باشگاه" />
+
+    <!--
+    <LinearLayout
+      android:id="@+id/layout_level"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/_12sdp"
+      android:layout_marginRight="@dimen/_9ssp"
+      android:background="@drawable/bg_hexagonal"
+      android:gravity="center"
+      android:orientation="horizontal"
+      android:text="LV2"
+      android:textColor="@color/white"
+      android:textSize="@dimen/_9ssp"
+      app:layout_constraintBottom_toBottomOf="@+id/club_icon"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/club_icon">
+
+      <TextView
+        android:id="@+id/user_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_level"
+        android:drawablePadding="@dimen/_5sdp"
+        android:gravity="center"
+        android:text="LV2"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_9ssp" />
+
+    </LinearLayout>
+    -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/club_icon"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/club_icon"
+            app:layout_constraintVertical_bias="0.333">
+
+            <LinearLayout
+                android:id="@+id/layout_instagram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_12sdp"
+                android:background="@drawable/bg_hexagonal_small"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_6sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:src="@drawable/instagram" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_twitter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_12sdp"
+                android:background="@drawable/bg_hexagonal_small"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_6sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:src="@drawable/twitter" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_youtube"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_12sdp"
+                android:background="@drawable/bg_hexagonal_small"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_6sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:src="@drawable/youtube" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+        android:id="@+id/club_description"
+        style="@style/RegularTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_7sdp"
+        tools:text="@{viewModel.token.description}"
+        android:gravity="right"
+        android:lineSpacingExtra="@dimen/_6sdp"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/club_icon"
+        android:text="توضیحات توکن" />
+        <ImageView
+            android:id="@+id/zipline1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/club_description"
+            android:layout_margin="@dimen/_13sdp"
+            android:layerType="software"
+            app:layout_constraintBottom_toTopOf="@id/dateStartTitle"
+            android:background="@drawable/bg_zipline"/>
+        <TextView
+            android:id="@+id/dateStartTitle"
+            style="@style/RegularTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_25sdp"
+            android:textColor="@color/grey_500"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintTop_toBottomOf="@id/zipline1"
+            android:text="تاریخ شروع عرضه اولین"
+            android:layout_marginBottom="@dimen/_27sdp"
+            app:layout_constraintBottom_toTopOf="@id/dateEndTitle"
+            app:layout_constraintRight_toRightOf="parent"/>
+        <TextView
+            android:id="@+id/dateStart"
+            style="@style/RegularTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_25sdp"
+            android:textColor="@color/grey_500"
+            tools:text="@{viewModel.token.startTime}"
+            setPersianDate="@{viewModel.token.endTime}"
+            shortDateFormat="@{true}"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintTop_toBottomOf="@id/zipline1"
+            app:layout_constraintRight_toLeftOf="@id/dateStartTitle"
+            android:text="1400/01/01 15:20"
+            android:layout_marginBottom="@dimen/_27sdp"
+            app:layout_constraintBottom_toTopOf="@id/dateEnd"
+            app:layout_constraintRight_toRightOf="parent"/>
+        <TextView
+            android:id="@+id/dateEndTitle"
+            style="@style/RegularTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_25sdp"
+            android:textColor="@color/grey_500"
+            android:layout_marginTop="@dimen/_27sdp"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintTop_toBottomOf="@id/dateStart"
+            android:text="تاریخ شروع عرضه اولین"
+            app:layout_constraintRight_toRightOf="parent"/>
+        <TextView
+            android:id="@+id/dateEnd"
+            style="@style/RegularTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_27sdp"
+            android:textColor="@color/grey_500"
+            android:textSize="@dimen/_11ssp"
+            tools:text="@{viewModel.token.endTime}"
+            setPersianDate="@{viewModel.token.endTime}"
+            shortDateFormat="@{true}"
+            app:layout_constraintTop_toBottomOf="@id/dateStart"
+            app:layout_constraintRight_toLeftOf="@id/dateEndTitle"
+            android:text="1400/02/01 15:30"
+            app:layout_constraintRight_toRightOf="parent"/>
+        <ImageView
+            android:id="@+id/zipline2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dateEnd"
+            android:layout_margin="@dimen/_13sdp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/tokenCountTiltle"
+            android:layerType="software"
+            android:src="@drawable/bg_zipline"/>
+
+        <TextView
+            android:id="@+id/tokenCountTiltle"
+            style="@style/RegularTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_25sdp"
+            android:textColor="@color/grey_500"
+            android:textSize="@dimen/_11ssp"
+            android:text="تعداد کل عرضه شده"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/zipline2"
+            app:layout_constraintBottom_toTopOf="@+id/tokenCostTitle"
+            />
+        <TextView
+            android:id="@+id/tokenCount"
+            style="@style/RegularTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_25sdp"
+            android:textColor="@color/grey_500"
+            android:textSize="@dimen/_11ssp"
+            suffix="@{@string/token}"
+            digitSeparatorText="@{viewModel.token.soldCap}"
+            app:layout_constraintBaseline_toBottomOf="@id/tokenCountTiltle"
+            app:layout_constraintTop_toBottomOf="@id/zipline2"
+            app:layout_constraintRight_toLeftOf="@id/dateStartTitle"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="100000 توکن"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tokenCountTiltle"
+            />
+
+        <TextView
+            android:id="@+id/tokenCostTitle"
+            style="@style/RegularTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_27sdp"
+            android:textColor="@color/grey_500"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toTopOf="@+id/limitBuyTiltle"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tokenCountTiltle"
+            android:layout_marginTop="@dimen/_22sdp"
+            android:text="قیمت پایه هر توکن" />
+
+        <TextView
+            android:id="@+id/tokenCost"
+            style="@style/RegularTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_25sdp"
+            android:textColor="@color/grey_500"
+            android:textSize="@dimen/_11ssp"
+            digitSeparatorText="@{viewModel.token.price}"
+            suffix="@{@string/rial}"
+            app:layout_constraintTop_toBottomOf="@id/tokenCount"
+            app:layout_constraintRight_toLeftOf="@id/dateStartTitle"
+            android:text="1000 ریال"
+            android:layout_marginTop="@dimen/_22sdp"
+            android:layout_marginBottom="@dimen/_27sdp"
+            app:layout_constraintBottom_toTopOf="@+id/limitBuy"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/limitBuyTiltle"
+            style="@style/RegularTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_25sdp"
+            android:textColor="@color/grey_500"
+            android:textSize="@dimen/_11ssp"
+            android:layout_marginTop="@dimen/_22sdp"
+            app:layout_constraintTop_toBottomOf="@id/tokenCostTitle"
+            android:text="سقف خرید هر فرد"
+            android:layout_marginBottom="@dimen/_27sdp"
+            app:layout_constraintRight_toRightOf="parent"/>
+        <TextView
+            android:id="@+id/limitBuy"
+            style="@style/RegularTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_25sdp"
+            android:textColor="@color/grey_500"
+            android:textSize="@dimen/_11ssp"
+            android:layout_marginTop="@dimen/_22sdp"
+            app:layout_constraintTop_toBottomOf="@id/tokenCost"
+            app:layout_constraintRight_toLeftOf="@id/dateStartTitle"
+            android:text="1000 توکن"
+            digitSeparatorText="@{viewModel.token.maxCapPerUser}"
+            suffix="@{@string/token}"
+            android:layout_marginBottom="@dimen/_27sdp"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

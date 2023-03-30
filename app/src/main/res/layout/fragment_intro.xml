@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+
+    <variable
+      name="viewModel"
+      type="io.fanito.android.ui.intro.IntroViewModel" />
+
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?colorPrimary">
+
+    <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/vGuideline"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/vGuideline2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/vGuideline3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_percent="0.65" />
+
+    <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/vGuideline4"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/hGuideline"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/hGuideline2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      app:layout_constraintGuide_percent="0.7" />
+
+    <ImageView
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:src="@drawable/fanito_title_logo"
+      app:layout_constraintBottom_toTopOf="@+id/hGuideline"
+      app:layout_constraintLeft_toRightOf="@+id/vGuideline2"
+      app:layout_constraintRight_toLeftOf="@+id/vGuideline3" />
+
+    <ImageView
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:scaleType="fitCenter"
+      android:src="@drawable/img_fanito_logo"
+      app:layout_constraintBottom_toTopOf="@+id/hGuideline2"
+      app:layout_constraintTop_toTopOf="@id/hGuideline" />
+
+    <com.google.android.material.button.MaterialButton
+      android:id="@+id/login"
+      style="@style/ExtraBoldTextView"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:background="@drawable/bg_orange_yellow_gradient"
+      android:paddingVertical="@dimen/_10sdp"
+      android:text="@string/login"
+      android:textSize="@dimen/_12ssp"
+      app:backgroundTint="@null"
+      app:layout_constraintLeft_toRightOf="@id/vGuideline"
+      app:layout_constraintRight_toLeftOf="@id/vGuideline4"
+      app:layout_constraintTop_toBottomOf="@id/hGuideline2" />
+
+    <com.google.android.material.button.MaterialButton
+      android:id="@+id/register"
+      style="@style/BoldTextView"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/_7sdp"
+      android:paddingVertical="@dimen/_8sdp"
+      android:stateListAnimator="@null"
+      android:text="@string/register"
+      android:textSize="@dimen/_11ssp"
+      app:layout_constraintLeft_toRightOf="@+id/vGuideline2"
+      app:layout_constraintRight_toLeftOf="@+id/vGuideline3"
+      app:layout_constraintTop_toBottomOf="@id/login" />
+
+    <TextView
+      android:id="@+id/agreement"
+      style="@style/BoldTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="@dimen/_23sdp"
+      android:text="@string/agreement"
+      android:textSize="@dimen/_9ssp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

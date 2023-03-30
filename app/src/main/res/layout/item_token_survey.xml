@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="item"
+      type="io.fanito.android.data.model.api.response.GetPollsResponse.Poll" />
+
+    <import type="java.text.DateFormat" />
+
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_6sdp"
+    android:layout_marginVertical="@dimen/_6sdp"
+    android:background="@drawable/bg_item_dark_with_stroke"
+    android:padding="@dimen/_12sdp">
+
+    <TextView
+      android:id="@+id/description"
+      style="@style/RegularTextView"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:background="@drawable/bg_purple"
+      android:gravity="right"
+      android:lineSpacingExtra="@dimen/_2sdp"
+      android:lines="7"
+      android:maxLines="7"
+      android:paddingHorizontal="@dimen/_12sdp"
+      android:paddingVertical="@dimen/_4sdp"
+      android:scrollbars="vertical"
+      android:text="@{item.description}"
+      android:textColor="@color/white"
+      android:textSize="@dimen/_10ssp"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="توضیحات نظرسنجی" />
+
+    <TextView
+      android:id="@+id/state"
+      style="@style/ExtraBoldTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/_20sdp"
+      android:layout_marginTop="@dimen/_7sdp"
+      android:gravity="right"
+      android:textSize="@dimen/_9ssp"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintLeft_toRightOf="@+id/participants_count"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/description"
+      tools:text="وضعیت نظرسنجی" />
+
+    <TextView
+      android:id="@+id/tokens_count"
+      style="@style/RegularTextView"
+      digitSeparatorText="@{item.totalTokens}"
+      suffix="@{@string/token}"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="@color/grey_500"
+      android:textSize="@dimen/_9ssp"
+      app:layout_constraintBaseline_toBaselineOf="@id/state"
+      app:layout_constraintLeft_toLeftOf="parent"
+      tools:text="تعداد توکن" />
+
+    <View
+      android:id="@+id/tokens_divider"
+      android:layout_width="@dimen/_2sdp"
+      android:layout_height="0dp"
+      android:layout_marginVertical="@dimen/_1sdp"
+      android:layout_marginLeft="@dimen/_6sdp"
+      android:alpha="0.3"
+      android:background="@color/grey_400"
+      app:layout_constraintBottom_toBottomOf="@id/tokens_count"
+      app:layout_constraintLeft_toRightOf="@id/tokens_count"
+      app:layout_constraintTop_toTopOf="@id/tokens_count" />
+
+    <TextView
+      android:id="@+id/participants_count"
+      style="@style/RegularTextView"
+      digitSeparatorText="@{item.participantCount}"
+      suffix="@{@string/participants}"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/_6sdp"
+      android:textColor="@color/grey_500"
+      android:textSize="@dimen/_9ssp"
+      app:layout_constraintBaseline_toBaselineOf="@id/state"
+      app:layout_constraintLeft_toRightOf="@+id/tokens_divider"
+      tools:text="تعداد شرکت کننده" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <data>
+
+    <variable
+      name="viewModel"
+      type="io.fanito.android.ui.main.home.HomeViewModel" />
+  </data>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="?actionBarSize"
+      android:background="@color/menu_background_color">
+
+      <ImageView
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="?actionBarItemBackground"
+        android:clickable="true"
+        android:padding="@dimen/_10sdp"
+        android:src="@drawable/ic_social_network" />
+
+      <ImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="@dimen/_10sdp"
+        android:src="@drawable/fanito_title_logo" />
+
+      <ImageView
+        android:id="@+id/profile"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="?actionBarItemBackground"
+        android:clickable="true"
+        android:padding="@dimen/_10sdp"
+        android:src="@drawable/ic_profile" />
+
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="?actionBarSize"
+      android:background="@drawable/bg_home_top_toolbar"
+      android:gravity="center"
+      android:orientation="horizontal"
+      android:paddingHorizontal="@dimen/_9sdp">
+
+      <TextView
+        android:id="@+id/market"
+        style="@style/BoldTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:drawableRight="@drawable/ic_bag"
+        android:drawablePadding="@dimen/_1sdp"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/_6sdp"
+        android:paddingVertical="@dimen/_5sdp"
+        android:text="@string/market"
+        android:textColor="@{viewModel.selectedTab == @string/market ? @color/yellow : @color/grey_500, default=@color/grey_500}"
+        android:textSize="@dimen/_9ssp" />
+
+      <View
+        android:layout_width="@dimen/_1sdp"
+        android:layout_height="@dimen/_16sdp"
+        android:alpha="0.5"
+        android:background="@color/grey_500" />
+
+      <TextView
+        android:id="@+id/game"
+        style="@style/BoldTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:drawableRight="@drawable/ic_game_and_reward"
+        android:drawablePadding="@dimen/_1sdp"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/_6sdp"
+        android:paddingVertical="@dimen/_5sdp"
+        android:text="@string/reward"
+        android:textColor="@{viewModel.selectedTab == @string/game_and_reward ? @color/yellow : @color/grey_500, default=@color/grey_500}"
+        android:textSize="@dimen/_9ssp" />
+
+      <View
+        android:layout_width="@dimen/_1sdp"
+        android:layout_height="@dimen/_16sdp"
+        android:alpha="0.5"
+        android:background="@color/grey_500" />
+
+      <TextView
+        android:id="@+id/fan_clubs"
+        style="@style/BoldTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:drawableRight="@drawable/ic_solid_copper"
+        android:drawablePadding="@dimen/_1sdp"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/_6sdp"
+        android:paddingVertical="@dimen/_5sdp"
+        android:text="@string/fan_token"
+        android:textColor="@{viewModel.selectedTab == @string/fan_clubs ? @color/yellow : @color/grey_500, default=@color/grey_500}"
+        android:textSize="@dimen/_9ssp" />
+
+      <View
+        android:layout_width="@dimen/_1sdp"
+        android:layout_height="@dimen/_16sdp"
+        android:alpha="0.5"
+        android:background="@color/grey_500" />
+
+      <TextView
+        android:id="@+id/news"
+        style="@style/BoldTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:drawableRight="@drawable/ic_ticket_star"
+        android:drawablePadding="@dimen/_1sdp"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/_6sdp"
+        android:paddingVertical="@dimen/_5sdp"
+        android:text="@string/news"
+        android:textColor="@{viewModel.selectedTab == @string/news ? @color/yellow : @color/grey_500, default=@color/grey_500}"
+        android:textSize="@dimen/_9ssp" />
+
+    </LinearLayout>
+
+  </LinearLayout>
+</layout>

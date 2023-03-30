@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="viewModel"
+      type="io.fanito.android.ui.main.home.HomeViewModel" />
+
+  </data>
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background">
+
+    <include
+        android:id="@+id/include_top_toolbar"
+        layout="@layout/layout_home_top_toolbar"
+        app:viewModel="@{viewModel}" />
+
+    <androidx.core.widget.NestedScrollView
+      android:id="@+id/scroll_view"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/include_top_toolbar"
+      android:layout_alignParentBottom="true">
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.viewpager2.widget.ViewPager2
+          android:id="@+id/photo_slider"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
+  
+          <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+          android:id="@+id/slider_indicator"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          app:dotsColor="@color/yellow_700"
+          app:dotsCornerRadius="@dimen/_6sdp"
+          app:dotsSize="@dimen/_6sdp"
+          app:dotsSpacing="@dimen/_2sdp"
+          app:dotsStrokeColor="@color/light_purple_primary_variant"
+          app:dotsStrokeWidth="@dimen/_3sdp" />
+
+        <LinearLayout
+          android:id="@+id/layout_items"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/_16sdp"
+          android:animateLayoutChanges="true"
+          android:background="@drawable/bg_home_bottom_content"
+          android:orientation="vertical">
+
+          <TextView
+            android:id="@+id/fan_tokens_title"
+            style="@style/ExtraBoldTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginRight="@dimen/_12sdp"
+            android:gravity="center"
+            android:text="@string/fan_clubs"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp" />
+
+          <androidx.recyclerview.widget.RecyclerView
+              android:id="@+id/fan_tokens"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/_3sdp"
+              android:orientation="horizontal"
+              app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+              app:reverseLayout="true"
+              tools:listitem="@layout/item_fan_token" />
+
+          <TextView
+            android:id="@+id/games_and_rewards_title"
+            style="@style/ExtraBoldTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_12sdp"
+            android:gravity="center"
+            android:text="@string/game_and_reward"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp" />
+
+          <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/games_and_rewards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:alpha="0.1"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:reverseLayout="true"
+            tools:listitem="@layout/item_fan_token" />
+
+          <TextView
+            android:id="@+id/market_title"
+            style="@style/ExtraBoldTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_12sdp"
+            android:gravity="center"
+            android:text="@string/market"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp" />
+
+          <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/markets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:alpha="0.1"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:reverseLayout="true"
+            tools:listitem="@layout/item_fan_token" />
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/_44sdp"
+      android:layout_alignParentBottom="true"
+      android:background="@drawable/bg_home_bottom_shadow"
+      android:paddingVertical="@dimen/_12sdp" />
+
+  </RelativeLayout>
+
+</layout>

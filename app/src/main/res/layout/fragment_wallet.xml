@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="viewModel"
+      type="io.fanito.android.ui.main.wallet.WalletViewModel" />
+
+    <import type="android.view.View" />
+
+  </data>
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background">
+
+    <LinearLayout
+      android:id="@+id/layout_toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:orientation="horizontal"
+      android:paddingHorizontal="@dimen/_16sdp"
+      android:paddingTop="@dimen/_8sdp">
+
+<!--      <ImageView-->
+<!--        android:id="@+id/menu"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="?actionBarItemBackground"-->
+<!--        android:clickable="true"-->
+<!--        android:padding="@dimen/_6sdp"-->
+<!--        android:src="@drawable/ic_menu" />-->
+
+      <TextView
+        android:id="@+id/user_name"
+        style="@style/BoldTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@{viewModel.userFullName}"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        tools:text="نام کامل کاربری" />
+
+      <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_wallet"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:clickable="true"
+        android:src="@drawable/img_profile_holder" />
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/layout_toolbar"
+      android:layout_alignParentBottom="true"
+      android:layout_marginHorizontal="@dimen/_16sdp"
+      android:paddingTop="@dimen/_10sdp">
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:animateLayoutChanges="true">
+
+          <View
+            android:id="@+id/balance_background"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_wallet_balance"
+            app:layout_constraintBottom_toBottomOf="@+id/holder_balance_below"
+            app:layout_constraintTop_toTopOf="parent" />
+
+          <TextView
+            android:id="@+id/my_balance_title"
+            style="@style/BoldTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginRight="@dimen/_12sdp"
+            android:drawableRight="@drawable/ic_wallet_solid"
+            android:drawablePadding="@dimen/_7sdp"
+            android:gravity="center"
+            android:text="@string/my_wallet_balance"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintRight_toRightOf="@+id/balance_background"
+            app:layout_constraintTop_toTopOf="@+id/balance_background" />
+
+          <TextView
+            android:id="@+id/user_balance"
+            style="@style/ExtraBoldTextView"
+            digitSeparatorText="@{viewModel.userBalance}"
+            gradient="@{true}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp"
+            android:visibility="@{viewModel.userBalance == null ? View.INVISIBLE : View.VISIBLE, default=invisible}"
+            app:layout_constraintRight_toRightOf="@+id/my_balance_title"
+            app:layout_constraintTop_toBottomOf="@+id/my_balance_title"
+            tools:text="موجودی"
+            tools:visibility="visible" />
+
+          <TextView
+            android:id="@+id/tooman"
+            style="@style/ExtraBoldTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_9ssp"
+            android:text="@string/rial"
+            android:textColor="@color/grey_500"
+            android:textSize="@dimen/_9ssp"
+            android:visibility="@{viewModel.userBalance == null ? View.INVISIBLE : View.VISIBLE, default=invisible}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/user_balance"
+            app:layout_constraintRight_toLeftOf="@+id/user_balance"
+            tools:visibility="visible" />
+
+          <!--
+          <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_12sdp"
+            android:layout_marginRight="@dimen/_9ssp"
+            android:background="@drawable/bg_hexagonal"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:text="LV2"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintLeft_toLeftOf="@+id/balance_background"
+            app:layout_constraintTop_toBottomOf="@+id/my_balance_title">
+
+            <TextView
+              android:id="@+id/user_level"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:drawableLeft="@drawable/ic_level"
+              android:drawablePadding="@dimen/_4sdp"
+              android:gravity="center"
+              android:text="LV2"
+              android:textColor="@color/white"
+              android:textSize="@dimen/_9ssp" />
+
+          </LinearLayout>
+          -->
+
+          <View
+            android:id="@+id/balance_divider"
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:background="@drawable/ic_divider"
+            app:layout_constraintLeft_toLeftOf="@id/balance_background"
+            app:layout_constraintRight_toRightOf="@id/balance_background"
+            app:layout_constraintTop_toBottomOf="@id/user_balance" />
+
+          <TextView
+            android:id="@+id/my_token_title"
+            style="@style/BoldTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginRight="@dimen/_12sdp"
+            android:text="@string/my_tokens"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintRight_toRightOf="@id/balance_background"
+            app:layout_constraintTop_toBottomOf="@+id/balance_divider" />
+
+          <FrameLayout
+            android:id="@+id/layout_user_tokens"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            app:layout_constraintLeft_toLeftOf="@id/balance_background"
+            app:layout_constraintRight_toRightOf="@id/balance_background"
+            app:layout_constraintTop_toBottomOf="@+id/my_token_title">
+
+            <androidx.recyclerview.widget.RecyclerView
+              android:id="@+id/user_tokens"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginHorizontal="@dimen/_12sdp"
+              android:layout_marginTop="@dimen/_6sdp"
+              android:visibility="gone"
+              app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+              tools:itemCount="4"
+              tools:listitem="@layout/item_portfolio"
+              tools:visibility="visible" />
+
+            <ProgressBar
+              android:id="@+id/loading_tokens"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center_horizontal"
+              android:layout_marginVertical="@dimen/_16sdp"
+              android:indeterminateTint="@color/main_background"
+              android:visibility="gone" />
+
+            <TextView
+              android:id="@+id/user_tokens_message"
+              style="@style/BoldTextView"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center_horizontal"
+              android:layout_marginHorizontal="@dimen/_12sdp"
+              android:layout_marginVertical="@dimen/_25sdp"
+              android:gravity="center"
+              android:textColor="@color/white"
+              android:textSize="@dimen/_12ssp"
+              android:visibility="gone"
+              tools:text="متن خطا" />
+
+          </FrameLayout>
+
+          <View
+            android:id="@+id/holder_balance_below"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            app:layout_constraintTop_toBottomOf="@+id/layout_user_tokens" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
+
+          <LinearLayout
+            android:id="@+id/parent_withdraw"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_9sdp"
+            android:layout_marginRight="@dimen/_9sdp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_withdraw"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/_12sdp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/vGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/balance_background">
+
+            <TextView
+              style="@style/BoldTextView"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginRight="@dimen/_4sdp"
+              android:drawableRight="@drawable/ic_withdraw"
+              android:drawablePadding="@dimen/_7sdp"
+              android:gravity="center"
+              android:text="@string/withdraw"
+              android:textColor="@color/red_400"
+              android:textSize="@dimen/_12ssp"
+              app:layout_constraintRight_toLeftOf="@+id/token_photo"
+              app:layout_constraintTop_toBottomOf="@+id/token_name" />
+
+          </LinearLayout>
+
+          <LinearLayout
+            android:id="@+id/parent_deposit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_9sdp"
+            android:layout_marginTop="@dimen/_9sdp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_deposit"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/_12sdp"
+            app:layout_constraintLeft_toRightOf="@+id/vGuideline"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/balance_background">
+
+            <TextView
+              style="@style/BoldTextView"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginRight="@dimen/_4sdp"
+              android:drawableRight="@drawable/ic_deposit"
+              android:drawablePadding="@dimen/_7sdp"
+              android:gravity="center"
+              android:text="@string/deposit"
+              android:textColor="@color/green_A400"
+              android:textSize="@dimen/_12ssp"
+              app:layout_constraintRight_toLeftOf="@+id/token_photo"
+              app:layout_constraintTop_toBottomOf="@+id/token_name" />
+
+          </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+          android:id="@+id/deposit_withdraw_divider"
+          android:layout_width="match_parent"
+          android:layout_height="3dp"
+          android:layout_marginTop="@dimen/_12sdp"
+          android:background="@drawable/ic_divider"
+          app:layout_constraintTop_toBottomOf="@id/parent_deposit" />
+
+        <TextView
+          android:id="@+id/history_title"
+          style="@style/BoldTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="right"
+          android:layout_marginTop="@dimen/_7sdp"
+          android:text="@string/wallet_history"
+          android:textColor="@color/white"
+          android:textSize="@dimen/_12ssp"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/deposit_withdraw_divider" />
+
+        <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/history"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingVertical="@dimen/_7sdp"
+          app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+          app:layout_constraintTop_toBottomOf="@+id/history_title"
+          tools:itemCount="5"
+          tools:listitem="@layout/item_tx_history" />
+
+      </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+  </RelativeLayout>
+
+</layout>
