@@ -7,11 +7,11 @@
 
     <variable
       name="viewModel"
-      type="io.fanito.android.ui.intro.login.LoginViewModel" />
+      type="io.android.fanito_androidclient.ui.intro.login.LoginViewModel" />
 
-    <import type="io.fanito.android.utils.enums.Validation" />
+    <import type="io.android.fanito_androidclient.utils.enums.Validation" />
 
-    <import type="io.fanito.android.ui.intro.login.LoginViewModel.LoginState" />
+    <import type="io.android.fanito_androidclient.ui.intro.login.LoginViewModel.LoginState" />
 
     <import type="android.view.View" />
 
