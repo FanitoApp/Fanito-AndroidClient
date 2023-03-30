@@ -7,7 +7,7 @@
 
     <variable
       name="item"
-      type="io.fanito.android.data.model.api.response.GetPollsResponse.Poll" />
+      type="io.android.fanito_androidclient.data.model.api.response.GetPollsResponse.Poll" />
 
     <import type="java.text.DateFormat" />
 

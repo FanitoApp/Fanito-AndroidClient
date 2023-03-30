@@ -7,7 +7,7 @@
 
     <variable
       name="viewModel"
-      type="io.fanito.android.ui.main.home.HomeViewModel" />
+      type="io.android.fanito_androidclient.ui.main.home.HomeViewModel" />
 
   </data>
 

@@ -5,7 +5,7 @@
 
     <variable
       name="viewModel"
-      type="io.fanito.android.ui.main.exchange.ExchangeViewModel" />
+      type="io.android.fanito_androidclient.ui.main.exchange.ExchangeViewModel" />
 
   </data>
 

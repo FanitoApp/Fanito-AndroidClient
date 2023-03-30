@@ -7,7 +7,7 @@
 
     <variable
       name="viewModel"
-      type="io.fanito.android.ui.main.surveys.voting.VotingViewModel" />
+      type="io.android.fanito_androidclient.ui.main.surveys.voting.VotingViewModel" />
 
     <import type="android.view.View" />
 

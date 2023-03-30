@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="io.fanito.android.ui.main.news.NewsViewModel" />
+            type="io.android.fanito_androidclient.ui.main.news.NewsViewModel" />
 
     </data>
     <ScrollView

@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="io.fanito.android.ui.main.deatil.TokenDetailViewModel" />
+            type="io.android.fanito_androidclient.ui.main.deatil.TokenDetailViewModel" />
 
         <import type="android.view.View" />
 

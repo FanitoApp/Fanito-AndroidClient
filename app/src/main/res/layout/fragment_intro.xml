@@ -6,7 +6,7 @@
 
     <variable
       name="viewModel"
-      type="io.fanito.android.ui.intro.IntroViewModel" />
+      type="io.android.fanito_androidclient.ui.intro.IntroViewModel" />
 
   </data>
 

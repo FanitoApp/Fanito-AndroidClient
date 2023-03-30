@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="io.fanito.android.ui.sample.dialog.SampleBottomSheetDialogViewModel" />
+            type="io.android.fanito_androidclient.ui.sample.dialog.SampleBottomSheetDialogViewModel" />
 
     </data>
 

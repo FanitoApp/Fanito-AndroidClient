@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="io.fanito.android.ui.sample.activity.SampleActivityViewModel" />
+            type="io.android.fanito_androidclient.ui.sample.activity.SampleActivityViewModel" />
 
     </data>
 

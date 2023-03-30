@@ -7,7 +7,7 @@
 
     <variable
       name="item"
-      type="io.fanito.android.data.model.others.StaticClubNews" />
+      type="io.android.fanito_androidclient.data.model.others.StaticClubNews" />
 
   </data>
 

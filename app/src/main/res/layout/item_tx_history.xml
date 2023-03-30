@@ -7,11 +7,11 @@
 
     <variable
       name="item"
-      type="io.fanito.android.data.model.api.response.GetTxsResponse.Tx" />
+      type="io.android.fanito_androidclient.data.model.api.response.GetTxsResponse.Tx" />
 
     <import type="java.text.DateFormat" />
 
-    <import type="io.fanito.android.utils.AppConstants" />
+    <import type="io.android.fanito_androidclient.utils.AppConstants" />
 
   </data>
 

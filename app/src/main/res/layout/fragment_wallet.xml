@@ -7,7 +7,7 @@
 
     <variable
       name="viewModel"
-      type="io.fanito.android.ui.main.wallet.WalletViewModel" />
+      type="io.android.fanito_androidclient.ui.main.wallet.WalletViewModel" />
 
     <import type="android.view.View" />
 
