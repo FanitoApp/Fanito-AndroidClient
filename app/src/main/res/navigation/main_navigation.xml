@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/main_nav_graph"
+  app:startDestination="@id/home">
+
+  <fragment
+    android:id="@+id/home"
+    android:name="io.fanito.android.ui.main.home.HomeFragment"
+    android:label="@string/home_label"
+    tools:layout="@layout/fragment_home">
+
+    <action
+      android:id="@+id/action_home_to_tokenInfo"
+      app:destination="@+id/token_info" />
+
+  </fragment>
+
+  <fragment
+    android:id="@+id/surveys"
+    android:name="io.fanito.android.ui.main.surveys.SurveysFragment"
+    android:label="@string/survey_label"
+    tools:layout="@layout/fragment_surveys">
+
+    <action
+      android:id="@+id/action_surveys_to_voting"
+      app:destination="@+id/voting" />
+
+  </fragment>
+
+  <fragment
+    android:id="@+id/token_info"
+    android:name="io.fanito.android.ui.main.home.token_info.TokenInfoFragment"
+    android:label="@string/token_info_label"
+    tools:layout="@layout/fragment_token_info">
+
+    <argument
+      android:name="token_json"
+      app:argType="string"
+      app:nullable="false" />
+
+    <action
+      android:id="@+id/action_tokenInfo_to_voting"
+      app:destination="@+id/voting" />
+    <action
+      android:id="@+id/action_tokenInfo_to_detail"
+      app:destination="@id/detail"/>
+    <action
+        android:id="@+id/action_token_info_to_news"
+        app:destination="@id/news" />
+  </fragment>
+
+  <fragment
+    android:id="@+id/voting"
+    android:name="io.fanito.android.ui.main.surveys.voting.VotingFragment"
+    android:label="@string/voting_label"
+    tools:layout="@layout/fragment_voting">
+
+    <argument
+      android:name="poll_json"
+      app:argType="string"
+      app:nullable="false" />
+    <action
+        android:id="@+id/action_voting_to_token_info"
+        app:destination="@id/token_info" />
+
+  </fragment>
+
+  <fragment
+    android:id="@+id/hunt"
+    android:name="io.fanito.android.ui.main.hunt.HuntFragment"
+    android:label="@string/hunt_label"
+    tools:layout="@layout/fragment_hunt">
+
+  </fragment>
+
+  <fragment
+    android:id="@+id/wallet"
+    android:name="io.fanito.android.ui.main.wallet.WalletFragment"
+    android:label="@string/wallet_label"
+    tools:layout="@layout/fragment_wallet">
+
+  </fragment>
+
+  <fragment
+    android:id="@+id/exchange"
+    android:name="io.fanito.android.ui.main.exchange.ExchangeFragment"
+    android:label="@string/exchange_label"
+    tools:layout="@layout/fragment_exchange">
+
+  </fragment>
+  <fragment
+    android:id="@+id/detail"
+    android:name="io.fanito.android.ui.main.deatil.TokenDetailFragment"
+    android:label="Token Detail"
+      tools:layout="@layout/fragment_token_detail">
+    <argument
+      android:name="token_json"
+        app:argType="string"
+      app:nullable="false"/>
+
+    <argument
+      android:name="issuer_json"
+      app:argType="io.fanito.android.data.model.api.response.UserDetailsResponse"
+        app:nullable="false"
+        />
+  </fragment>
+  <fragment
+      android:id="@+id/news"
+      android:name="io.fanito.android.ui.main.news.NewsFragment"
+      android:label="News"
+      tools:layout="@layout/fragment_news">
+    <argument
+      android:name="news_token"
+      app:argType="string"
+      app:nullable="false"/>
+
+  </fragment>
+</navigation>

@@ -1,3 +1,104 @@
 <resources>
-    <string name="app_name">Fanito-AndroidClient</string>
+    <string name="app_name">Fanito</string>
+
+    <!-- play store -->
+    <string name="app_google_play_store_link">"https://play.google.com/store/apps/details?id="</string>
+    <string name="app_market_link">"market://details?id="</string>
+    <string name="fanito_website" translatable="false">https://www.fanito.io</string>
+
+    <!-- navigation labels -->
+    <string name="home_label" translatable="false">Home</string>
+    <string name="hunt_label" translatable="false">Hunt</string>
+    <string name="wallet_label" translatable="false">Wallet</string>
+    <string name="feed_label" translatable="false">Feed</string>
+    <string name="exchange_label" translatable="false">Exchange</string>
+    <string name="survey_label" translatable="false">Survey</string>
+    <string name="voting_label" translatable="false">Voting</string>
+    <string name="token_info_label" translatable="false">Token Info</string>
+
+  <string name="empty" />
+  <string name="agreement">کلیه <font color='#FCA234'>قوانین و مقررات</font> را میپذیرم</string>
+  <string name="network_error">عدم اتصال به اینترنت</string>
+  <string name="please_wait">لطفا منتظر بمانید</string>
+  <string name="phone_not_registered">شماره موبایل ثبت نام نشده است</string>
+  <string name="operation_failed">خطا در انجام عملیات</string>
+  <string name="operation_limit_exceeded">تکرار بیش از حدِ عملیات</string>
+  <string name="invalid_otp">کد تایید نامعتبر است</string>
+  <string name="enter_your_phone_number">لطفا شماره موبایل خود را وارد کنید</string>
+  <string name="enter_your_verify_code">لطفا کد 4 رقمی را که به شماره شما به صورت پیامک ارسال کرده ایم وارد کنید</string>
+  <string name="phone">موبایل</string>
+  <string name="next">بعدی</string>
+  <string name="login">ورود</string>
+  <string name="register">عضویت</string>
+  <string name="edit_number">ویرایش شماره</string>
+  <string name="resend_code">ارسال مجدد</string>
+  <string name="token">توکن</string>
+  <string name="vote">رای</string>
+  <string name="edit_information">ویرایش اطلاعات</string>
+  <string name="user_information">اطلاعات کاربری</string>
+  <string name="settings">تنظیمات</string>
+  <string name="security">امنیت</string>
+  <string name="verify_identity">تایید هویت</string>
+  <string name="terms_and_condition">شرایط استفاده از سرویس</string>
+  <string name="contact_us">ارتباط با ما</string>
+  <string name="survey">نظرسنجی</string>
+  <string name="surveys">نظرسنجی‌ها</string>
+  <string name="my_wallet_balance">موجودی کیف پول من</string>
+  <string name="tooman">تومان</string>
+  <string name="rial">ریال</string>
+  <string name="my_token">توکن من</string>
+  <string name="my_tokens">توکن‌های من</string>
+  <string name="withdraw">برداشت</string>
+  <string name="deposit">واریز</string>
+  <string name="buy_token">خرید توکن</string>
+  <string name="wallet_history">سوابق کیف پول</string>
+  <string name="sign_out">خروج از حساب</string>
+  <string name="fan_clubs">باشگاه‌های هواداری</string>
+  <string name="game_and_reward">بازی و جایزه</string>
+  <string name="market">مارکت</string>
+  <string name="tokens_empty">هیچ توکنی جهت نمایش وجود ندارد</string>
+  <string name="try_again">تلاش مجدد</string>
+  <string name="participants">شرکت کننده</string>
+    <string name="active">فعال</string>ended
+  <string name="ended">خاتمه یافته</string>
+  <string name="polls_pending">در انتظار شروع</string>
+  <string name="get_poll_options_failed">خطا در دریافت گزینه‌های نظرسنجی</string>
+  <string name="poll_options_empty">نظرسنجی گزینه‌ای ندارد</string>
+  <string name="send">ارسال</string>
+  <string name="required_token_not_found">توکن لازم برای شرکت در این نظرسنجی را ندارد</string>
+  <string name="already_voted">قبلا در نظرسنجی شرکت کرده‌اید</string>
+  <string name="version">نسخه</string>
+  <string name="news">اخبار</string>
+  <string name="fan_token">فن توکن</string>
+  <string name="game">بازی</string>
+  <string name="reward">جایزه</string>
+  <string name="balance_is_not_enough">این باشگاه غیرفعال است</string>
+  <string name="perpolisNews1">
+    پس از انجام فرایند عرضه در فرابورس، مذاکرات برای واگذاری بخشی از سهام پرسپولیس و استقلال به ۲ اپراتور رقیب یعنی ایرانسل و همراه اول آغاز خواهد شد.
+    آن طورکه حسین قربان زاده گفت: این سازمان تصمیم دارد در گام نخست برای خصوصی‌سازی بخشی از سهام این دو باشگاه، آن‌ها را در بازار پایه فرا بورس و در تابلوی نارنجی عرضه کند.
+او اضافه کرد: با عرضه سهام این دو باشگاه در فرا بورس پرسپولیس و استقلال ملزم می‌شوند، اطلاعات مالی‌شان را با دقت بیشتری ارائه کنند و این اطلاعات در اختیار عموم مردم قرارمی‌گیرد، درنتیجه شفافیت مالی آنها بیشتر می‌شود.
+به گفته او مزیت این نوع افزایش سرمایه این است که منابع حاصل از افزایش سرمایه در شرکت‌ها ذخیره و صرف فعالیت‌های این دو باشگاه می‌شود و مردم نیز می‌توانند در افزایش سرمایه شرکت کنند.
+  </string>
+  <string name="perpolisNews2">
+    مشیری با ثروت ۲.۵ میلیارد دلار یکی از هزار فرد ثروتمند دنیا به حساب می‌آید که عمده سرمایه‌اش را از طریق سرمایه‌گذاری روی صنعت و معدن، ارتباطات و باشگاه‌های ورزشی به دست آورده است
+    . اقدام مشیری برای خرید سهام باشگاه پرسپولیس از آنجایی مطرح شد که وزیر ورزش در یکی از وعده‌های بی‌انتهایش برای خصوصی‌سازی سرخابی‌ها اعلام کرد این کار تا پایان امسال انجام خواهد شد.
+    مشیری با علی دایی رفاقت دیرینه دارد. حتی گفته می‌شود با درویش مدیرعامل فعلی پرسپولیس هم مراوداتی داشته.
+  </string>
+  <string name="perpolisNews3">
+        مشیری با علی دایی رفاقت دیرینه دارد. حتی گفته می‌شود با درویش مدیرعامل فعلی پرسپولیس هم مراوداتی داشته.
+عالیشاه که در نیم فصل اول حسابی روی فرم بود و تأثیرگذار نشان می‌داد در بازی با سپاهان در اراک در یک صحنه ساده از ناحیه عضله چهارسر ران مصدوم شد و چهار دیدار حساس مقابل تراکتور، پدیده، فجر و فولاد را از دست داد. امید قبل از بازی سوپر جام در سیرجان به تمرینات تیمی برگشت اما شرایط بازی را نداشت. با این حال شرایط پیچیده آن مسابقه و از دسترس خارج شدن مهدی ترابی و احسان پهلوان یکی دو روز قبل از آن بازی باعث شد کادر فنی بالاجبار از عالیشاه استفاده کند.
+    عالیشاه که در نیم فصل اول حسابی روی فرم بود و تأثیرگذار نشان می‌داد در بازی با سپاهان در اراک در یک صحنه ساده از ناحیه عضله چهارسر ران مصدوم شد و چهار دیدار حساس مقابل تراکتور، پدیده، فجر و فولاد را از دست داد. امید قبل از بازی سوپر جام در سیرجان به تمرینات تیمی برگشت اما شرایط بازی را نداشت.
+    با این حال شرایط پیچیده آن مسابقه و از دسترس خارج شدن مهدی ترابی و احسان پهلوان یکی دو روز قبل از آن بازی باعث شد کادر فنی بالاجبار از عالیشاه استفاده کند.
+  </string>
+  <string name="esteglalNews2">
+    کاپیتان تیم فوتبال استقلال در اواخر تمرین امروز به‌دلیل مصدومیت از زمین خارج شد تا فرهاد مجیدی او را در اختیار کمیته انضباطی باشگاه قرار دهد.
+تمرین امروز (دوشنبه) تیم فوتبال استقلال از ساعت ۱۳ در مجموعه ورزشی آرارات برگزار شد. در اواخر این تمرین، وریا غفوری که از ناحیه انگشت پا احساس درد می‌کرد با تکل یکی از بازیکنان از همان ناحیه مصدوم شد. کاپیتان استقلال بعد از این اتفاق با ناراحتی به بطری آب لگد زد و از پزشک تیم خواست که برای او یخ بیاورد.
+فرهاد مجیدی سرمربی استقلال با تصور اینکه غفوری بدون اجازه از تمرین خارج شده است به بیژن طاهری سرپرست تیم اعلام می‌کند این بازیکن در اختیار کمیته انضباطی باشگاه خواهد بود و اجازه حضور در تمرینات را ندارد.
+  </string>
+  <string name="esteglalNews3">
+    فرهاد مجیدی سرمربی استقلال با تصور اینکه غفوری بدون اجازه از تمرین خارج شده است به بیژن طاهری سرپرست تیم اعلام می‌کند این بازیکن در اختیار کمیته انضباطی باشگاه خواهد بود و اجازه حضور در تمرینات را ندارد.
+در حالی که یک روز به این دیدار مهم باقی است، مجیدی هنوز به درستی نمی‌داند برای این بازی می‌تواند از سیاوش یزدانی و محمد حسین مرادمند که در آستانه اعزام به خدمت سربازی هستند استفاده کند یا خیر. به جز آن تکلیف وریا غفوری کاپیتان آبی‌پوشان هم هنوز به درستی مشخص نیست و ممکن است این بازیکن باتجربه هم برای دیدار مقابل فجر جزو غایبان این تیم باشد.
+  </string>
+
+
 </resources>
