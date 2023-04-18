@@ -1,6 +1,6 @@
 package io.android.fanito_androidclient.data.model.others
 
-import io.android.fanito_androidclient.IComparable
+import io.android.fanito_androidclient.utils.IComparable
 
 data class FanClubToken(
     var id: Long,

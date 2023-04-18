@@ -6,7 +6,7 @@ import io.android.fanito_androidclient.R
 import io.android.fanito_androidclient.AppConstants.TX_TYPE_DEPOSIT
 import io.android.fanito_androidclient.AppConstants.TX_TYPE_PURCHASE
 import io.android.fanito_androidclient.AppConstants.TX_TYPE_WITHDRAW
-import io.android.fanito_androidclient.IComparable
+import io.android.fanito_androidclient.utils.IComparable
 
 data class GetTxsResponse(
     @Expose @SerializedName("totalCount") val totalCount: Int?,
@@ -56,3 +56,4 @@ data class GetTxsResponse(
             }
         }
     }
+}

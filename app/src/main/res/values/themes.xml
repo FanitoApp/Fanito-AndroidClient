@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
   <!-- Base application theme. -->
-  <style name="Theme.Fanito" parent="Theme.MaterialComponents.NoActionBar">
+  <style name="Theme.FanitoAndroidClient" parent="Theme.MaterialComponents.NoActionBar">
     <!-- Primary brand color. -->
     <item name="colorPrimary">@color/dark_purple_primary</item>
     <item name="colorPrimaryVariant">@color/light_purple_primary_variant</item>
@@ -11,7 +11,7 @@
     <item name="colorOnSecondary">@color/black</item>
   </style>
 
-  <style name="Theme.Fanito.Splash" parent="Theme.Fanito">
+  <style name="Theme.FanitoAndroidClient.Splash" parent="Theme.FanitoAndroidClient">
     <!-- Primary brand color. -->
     <item name="colorPrimary">@color/dark_purple_primary</item>
     <item name="android:windowBackground">@drawable/launch_screen_background</item>
@@ -21,14 +21,14 @@
     <item name="android:navigationBarColor" tools:targetApi="l">?attr/colorPrimary</item>
   </style>
 
-  <style name="Theme.Fanito.Intro" parent="Theme.Fanito">
+  <style name="Theme.FanitoAndroidClient.Intro" parent="Theme.FanitoAndroidClient">
     <!-- Customize your theme here. -->
     <item name="android:navigationBarColor" tools:targetApi="l">?attr/colorPrimary</item>
     <!-- Status bar color. -->
     <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
   </style>
 
-  <style name="Theme.Fanito.Main" parent="Theme.Fanito">
+  <style name="Theme.FanitoAndroidClient.Main" parent="Theme.FanitoAndroidClient">
     <!-- Customize your theme here. -->
     <item name="android:navigationBarColor" tools:targetApi="l">@color/menu_background_color</item>
     <!-- Status bar color. -->

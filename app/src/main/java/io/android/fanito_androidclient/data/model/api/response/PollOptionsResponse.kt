@@ -3,7 +3,7 @@ package io.android.fanito_androidclient.data.model.api.response
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import io.android.fanito_androidclient.IComparable
+import io.android.fanito_androidclient.utils.IComparable
 
 data class PollOptionsResponse(
     @Expose @SerializedName("totalCount") val totalCount: Int?,

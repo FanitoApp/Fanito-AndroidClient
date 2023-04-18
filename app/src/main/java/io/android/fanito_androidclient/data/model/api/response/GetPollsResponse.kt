@@ -6,7 +6,7 @@ import io.android.fanito_androidclient.R
 import io.android.fanito_androidclient.AppConstants.POLL_STATE_ACTIVE
 import io.android.fanito_androidclient.AppConstants.POLL_STATE_ENDED
 import io.android.fanito_androidclient.AppConstants.POLL_STATE_PENDING
-import io.android.fanito_androidclient.IComparable
+import io.android.fanito_androidclient.utils.IComparable
 
 data class GetPollsResponse(
     @Expose @SerializedName("totalCount") val totalCount: Int?,
