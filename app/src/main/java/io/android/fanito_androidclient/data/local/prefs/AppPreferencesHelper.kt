@@ -2,7 +2,10 @@ package io.android.fanito_androidclient.data.local.prefs
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.auth0.android.jwt.JWT
+import io.android.fanito_androidclient.di.annotation.PreferenceInfo
 import java.util.Date
+import javax.inject.Inject
 
 class AppPreferencesHelper @Inject constructor(
     context: Context,
@@ -29,7 +32,7 @@ class AppPreferencesHelper @Inject constructor(
             mPrefs.getString(PREF_KEY_ACCESS_TOKEN, null)?.let{
                 var jwt: JWT = JWT(it)
                 var ExpireDate= jwt.expiresAt
-                if(Date()?.before(ExpireDate))
+                if(Date()?.before(ExpireDate) == true)
                 {
 
                 }

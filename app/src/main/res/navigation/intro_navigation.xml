@@ -7,7 +7,7 @@
 
   <fragment
     android:id="@+id/introFragment"
-    android:name="io.fanito.android.ui.intro.IntroFragment"
+    android:name="io.android.fanito_androidclient.ui.intro.IntroFragment"
     tools:layout="@layout/fragment_intro">
 
     <action
@@ -18,7 +18,7 @@
 
   <dialog
     android:id="@+id/loginDialog"
-    android:name="io.fanito.android.ui.intro.login.LoginBottomSheetDialog"
+    android:name="io.android.fanito_androidclient.ui.intro.login.LoginBottomSheetDialog"
     tools:layout="@layout/dialog_bottom_sheet_login" />
 
 </navigation>

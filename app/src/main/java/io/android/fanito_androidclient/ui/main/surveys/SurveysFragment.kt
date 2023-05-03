@@ -13,6 +13,7 @@ import io.android.fanito_androidclient.databinding.FragmentSurveysBinding
 import io.android.fanito_androidclient.ui.base.BaseFragment
 import io.android.fanito_androidclient.ui.main.surveys.adapter.SurveysAdapter
 import io.android.fanito_androidclient.utils.LoadStateAdapterVertical
+import io.android.fanito_androidclient.ui.main.surveys.SurveysFragmentDirections
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 

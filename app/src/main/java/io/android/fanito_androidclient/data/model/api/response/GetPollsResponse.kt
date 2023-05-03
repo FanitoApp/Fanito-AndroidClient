@@ -3,9 +3,9 @@ package io.android.fanito_androidclient.data.model.api.response
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import io.android.fanito_androidclient.R
-import io.android.fanito_androidclient.AppConstants.POLL_STATE_ACTIVE
-import io.android.fanito_androidclient.AppConstants.POLL_STATE_ENDED
-import io.android.fanito_androidclient.AppConstants.POLL_STATE_PENDING
+import io.android.fanito_androidclient.utils.AppConstants.POLL_STATE_ACTIVE
+import io.android.fanito_androidclient.utils.AppConstants.POLL_STATE_ENDED
+import io.android.fanito_androidclient.utils.AppConstants.POLL_STATE_PENDING
 import io.android.fanito_androidclient.utils.IComparable
 
 data class GetPollsResponse(

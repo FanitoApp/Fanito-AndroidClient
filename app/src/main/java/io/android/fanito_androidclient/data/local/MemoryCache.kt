@@ -1,6 +1,11 @@
 package io.android.fanito_androidclient.data.local
 
-import java.util.HashMap
+import io.android.fanito_androidclient.data.model.api.response.GetTokensResponse
+import io.android.fanito_androidclient.data.model.api.response.PortfolioResponse
+import io.android.fanito_androidclient.data.model.api.response.UserPersonalResponse
+import retrofit2.Response
+import java.util.*
+
 
 object MemoryCache {
 

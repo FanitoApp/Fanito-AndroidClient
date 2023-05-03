@@ -16,6 +16,8 @@ import io.android.fanito_androidclient.data.model.others.StaticClubNews
 import io.android.fanito_androidclient.databinding.FragmentTokenInfoBinding
 import io.android.fanito_androidclient.ui.base.BaseFragment
 import io.android.fanito_androidclient.utils.LoadStateAdapterHorizontal
+import io.android.fanito_androidclient.ui.main.home.token_info.TokenInfoFragmentArgs
+import io.android.fanito_androidclient.ui.main.home.token_info.TokenInfoFragmentDirections
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 

@@ -16,6 +16,7 @@ import io.android.fanito_androidclient.ui.base.BaseFragment
 import io.android.fanito_androidclient.ui.main.deatil.TokenDetailFragmentArgs
 import io.android.fanito_androidclient.ui.main.home.token_info.TokenInfoFragmentDirections
 import io.android.fanito_androidclient.ui.main.hunt.HuntViewModel
+import io.android.fanito_androidclient.ui.main.news.NewsFragmentArgs
 
 @AndroidEntryPoint
 class NewsFragment : BaseFragment<FragmentNewsBinding, NewsViewModel?>(),
