@@ -28,7 +28,7 @@ class MainViewModel @Inject constructor(dataManager: DataManager) :
   }
 
   /**
-   * دریافت اسم و فامیل کاربر
+   *Retrieving the user's first name and last name.
    */
   private fun fetchUserFullName() {
     val handler = CoroutineExceptionHandler { _, _ -> }
@@ -40,7 +40,7 @@ class MainViewModel @Inject constructor(dataManager: DataManager) :
   }
 
   /**
-   * دریافت لیست توکن های هواداری کاربر
+   * Fetching the list of user fan tokens.
    */
   private fun fetchUserTokens() {
     val handler = CoroutineExceptionHandler { _, _ -> }
@@ -48,10 +48,11 @@ class MainViewModel @Inject constructor(dataManager: DataManager) :
       val result = dataManager.userPortfolio(dataManager.userId!!)
       if (!result.isSuccessful || result.body().isNullOrEmpty()) return@launch
 
-      // جمع توکن های هواداری کاربر
+      // Summing up the user's fan tokens.
       var tokens = 0L
       result.body()!!.forEach {
-        // موجودی ریالی جزو توکن ها حساب نمیشود
+        // Cash balance is not considered as part of the tokens.
+
         if (it.symbol != TOKEN_SYMBOL_RIAL && it.balance != null) tokens += it.balance
       }
       _userTokensCount.postValue(tokens)

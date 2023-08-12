@@ -96,7 +96,7 @@ class HomeViewModel @Inject constructor(dataManager: DataManager) :
     items.add(
       FanClubToken(
         1,
-        "پرسپولیس",
+        "برسبوليس",
         price = 13000,
         percent = -2.5f,
         participants = 135000

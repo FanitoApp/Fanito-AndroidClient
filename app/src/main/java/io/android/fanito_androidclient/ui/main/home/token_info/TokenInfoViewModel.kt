@@ -96,7 +96,7 @@ class TokenInfoViewModel @Inject constructor(dataManager: DataManager) :
       StaticClubNews(
         1,
         dataManager.getDrawable(R.drawable.perspollis),
-        "واگذاری سهام پرسپولیس",
+        "نقل أسهم نادي برسبوليس.",
         dataManager.getString(R.string.perpolisNews1),
         R.drawable.perspollis
       )
@@ -105,7 +105,7 @@ class TokenInfoViewModel @Inject constructor(dataManager: DataManager) :
       StaticClubNews(
         2,
         dataManager.getDrawable(R.drawable.moshiri),
-        "آیا مشیری مالک باشگاه پرسپولیس می شود؟",
+        "هل سيصبح موشيري مالكًا لنادي برسبوليس؟",
         dataManager.getString(R.string.perpolisNews2),
         R.drawable.moshiri
       ,
@@ -115,7 +115,7 @@ class TokenInfoViewModel @Inject constructor(dataManager: DataManager) :
       StaticClubNews(
         3,
         dataManager.getDrawable(R.drawable.alishah),
-        "عالیشاه بعد از مصدومیت دوباره تمرین میکند",
+        "بعد من الإصابة، يعاود عالیشاه التدريب.",
         dataManager.getString(R.string.perpolisNews1)
       ,R.drawable.alishah
       )
@@ -133,7 +133,7 @@ class TokenInfoViewModel @Inject constructor(dataManager: DataManager) :
       StaticClubNews(
         1,
         dataManager.getDrawable(R.drawable.esteglal),
-        "واگذاری سهام استقلال",
+        "نقل أسهم نادي استقلال.",
         dataManager.getString(R.string.perpolisNews1),
         R.drawable.perspollis
       )
@@ -142,7 +142,7 @@ class TokenInfoViewModel @Inject constructor(dataManager: DataManager) :
       StaticClubNews(
         2,
         dataManager.getDrawable(R.drawable.veria),
-        "وریا غفوری اخراج شد",
+        "تم طرد وريا غفوري.",
         dataManager.getString(R.string.esteglalNews2),
         R.drawable.veria
       )
@@ -151,7 +151,7 @@ class TokenInfoViewModel @Inject constructor(dataManager: DataManager) :
       StaticClubNews(
         3,
         dataManager.getDrawable(R.drawable.bella),
-        "بلاتکلیفی مجیدی و استقلال مقابل فجر",
+        "عدم وضوح موقف مجيدي وفريق استقلال أمام فجر.",
         dataManager.getString(R.string.esteglalNews3),
         R.drawable.bella
       )
@@ -169,21 +169,21 @@ class TokenInfoViewModel @Inject constructor(dataManager: DataManager) :
       StaticClubNews(
         1,
         dataManager.getDrawable(R.drawable.breaking_news_1),
-        "متن خبر اول باشگاه",
+        "نص الخبر الأول للنادي:",
       )
     )
     items.add(
       StaticClubNews(
         2,
         dataManager.getDrawable(R.drawable.breaking_news_1),
-        "متن خبر دوم باشگاه متن خبر دوم باشگاه",
+        "نص الخبر الثاني للنادي:",
       )
     )
     items.add(
       StaticClubNews(
         3,
         dataManager.getDrawable(R.drawable.breaking_news_1),
-        "متن خبر سوم باشگاه متن خبر سوم باشگاه متن خبر سوم باشگاه",
+        "نص الخبر الثالث للنادي:",
       )
     )
     return items

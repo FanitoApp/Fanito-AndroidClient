@@ -41,7 +41,7 @@ class WalletViewModel @Inject constructor(dataManager: DataManager) :
   }
 
   /**
-   * دریافت لیست توکن های موجود کاربر از سرور
+   * Fetching the list of available tokens for the user from the server.
    */
   private fun fetchUserTokens() {
     val handler = CoroutineExceptionHandler { _, exception ->
@@ -53,18 +53,18 @@ class WalletViewModel @Inject constructor(dataManager: DataManager) :
       _tokens.postValue(DataResult.Loading(true))
       val result = dataManager.userPortfolio(dataManager.userId!!)
       when {
-        // خطا در دریافت لیست توکن های کاربر
+        // Error in retrieving the list of user tokens.
         !result.isSuccessful || result.body() == null ->
           _tokens.postValue(DataResult.Failure(dataManager.responseErrorMessage(result)))
-        // کاربر هیچ توکنی ندارد
+        // The user doesn't have any tokens.
         result.body()!!.isEmpty() ->
           _tokens.postValue(DataResult.Failure(dataManager.getString(R.string.tokens_empty)))
-        // نمایش لیست توکن ها
+        // Displaying the list of tokens.
         else -> {
           val tokens = arrayListOf<PortfolioResponse>()
           for (token in result.body()!!) {
             if (token.price == null || token.balance == null) continue
-            // توکن IRR مربوط به موجودی ریالی کاربر است و در لیست توکن ها لازم نیست نمایش داده شود
+            // The IRR token corresponds to the user's balance in Iranian Rials (IRR) and doesn't need to be displayed in the list of tokens.
             if (token.symbol == "IRR") _userBalance.postValue(token.price * token.balance)
             else tokens.add(token)
           }
@@ -75,7 +75,7 @@ class WalletViewModel @Inject constructor(dataManager: DataManager) :
   }
 
   /**
-   * دریافت اسم و فامیل کاربر
+   *Fetching the user's first name and last name.
    */
   private fun fetchUserFullName() {
     val handler = CoroutineExceptionHandler { _, _ -> }
