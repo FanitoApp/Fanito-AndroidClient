@@ -91,7 +91,7 @@
         app:layout_constraintLeft_toRightOf="@+id/layout_token"
         app:layout_constraintRight_toLeftOf="@+id/club_icon"
         app:layout_constraintTop_toTopOf="@id/club_icon"
-        tools:text="نام باشگاه" />
+        tools:text="اسم النادي." />
 
       <!--
       <LinearLayout
@@ -180,7 +180,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/club_icon"
-        tools:text="توضیحات توکن" />
+        tools:text="وصف التوكن" />
 
       <TextView
         android:id="@+id/surveys_title"

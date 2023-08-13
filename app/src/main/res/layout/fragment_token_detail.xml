@@ -80,7 +80,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintRight_toLeftOf="@+id/club_icon"
         app:layout_constraintTop_toTopOf="@id/club_icon"
-        android:text="نام باشگاه" />
+        android:text="اسم النادي." />
 
     <!--
     <LinearLayout
@@ -186,7 +186,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/club_icon"
-        android:text="توضیحات توکن" />
+        android:text="وصف التوكن" />
         <ImageView
             android:id="@+id/zipline1"
             android:layout_width="match_parent"
@@ -207,7 +207,7 @@
             android:textColor="@color/grey_500"
             android:textSize="@dimen/_11ssp"
             app:layout_constraintTop_toBottomOf="@id/zipline1"
-            android:text="تاریخ شروع عرضه اولین"
+            android:text="تاريخ بدء العرض الأولي"
             android:layout_marginBottom="@dimen/_27sdp"
             app:layout_constraintBottom_toTopOf="@id/dateEndTitle"
             app:layout_constraintRight_toRightOf="parent"/>
@@ -224,7 +224,7 @@
             android:textSize="@dimen/_11ssp"
             app:layout_constraintTop_toBottomOf="@id/zipline1"
             app:layout_constraintRight_toLeftOf="@id/dateStartTitle"
-            android:text="1400/01/01 15:20"
+            android:text="1442/01/01 15:20"
             android:layout_marginBottom="@dimen/_27sdp"
             app:layout_constraintBottom_toTopOf="@id/dateEnd"
             app:layout_constraintRight_toRightOf="parent"/>
@@ -238,7 +238,7 @@
             android:layout_marginTop="@dimen/_27sdp"
             android:textSize="@dimen/_11ssp"
             app:layout_constraintTop_toBottomOf="@id/dateStart"
-            android:text="تاریخ شروع عرضه اولین"
+            android:text="تاريخ بدء العرض الأولي"
             app:layout_constraintRight_toRightOf="parent"/>
         <TextView
             android:id="@+id/dateEnd"
@@ -254,7 +254,7 @@
             shortDateFormat="@{true}"
             app:layout_constraintTop_toBottomOf="@id/dateStart"
             app:layout_constraintRight_toLeftOf="@id/dateEndTitle"
-            android:text="1400/02/01 15:30"
+            android:text="1442/02/01 15:30"
             app:layout_constraintRight_toRightOf="parent"/>
         <ImageView
             android:id="@+id/zipline2"
@@ -277,7 +277,7 @@
             android:layout_marginRight="@dimen/_25sdp"
             android:textColor="@color/grey_500"
             android:textSize="@dimen/_11ssp"
-            android:text="تعداد کل عرضه شده"
+            android:text="عدد الإصدارات الإجمالي"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/zipline2"
             app:layout_constraintBottom_toTopOf="@+id/tokenCostTitle"
@@ -313,7 +313,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tokenCountTiltle"
             android:layout_marginTop="@dimen/_22sdp"
-            android:text="قیمت پایه هر توکن" />
+            android:text="سعر القاعدة لكل توكن" />
 
         <TextView
             android:id="@+id/tokenCost"
@@ -343,7 +343,7 @@
             android:textSize="@dimen/_11ssp"
             android:layout_marginTop="@dimen/_22sdp"
             app:layout_constraintTop_toBottomOf="@id/tokenCostTitle"
-            android:text="سقف خرید هر فرد"
+            android:text="سقف شراء لكل فرد"
             android:layout_marginBottom="@dimen/_27sdp"
             app:layout_constraintRight_toRightOf="parent"/>
         <TextView

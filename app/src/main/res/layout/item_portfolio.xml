@@ -42,7 +42,7 @@
       app:layout_constraintRight_toLeftOf="@+id/token_photo"
       app:layout_constraintTop_toTopOf="@id/token_photo"
       app:layout_constraintVertical_bias="0.15"
-      tools:text="نام توکن" />
+      tools:text="اسم التوكن" />
 
     <TextView
       android:id="@+id/token_price"
@@ -56,7 +56,7 @@
       android:textSize="@dimen/_9ssp"
       app:layout_constraintRight_toLeftOf="@+id/token_photo"
       app:layout_constraintTop_toBottomOf="@+id/token_name"
-      tools:text="مبلغ توکن" />
+      tools:text="مبلغ التوكن." />
 
     <LinearLayout
       android:id="@+id/layout_token"
@@ -90,7 +90,7 @@
         android:layout_marginRight="@dimen/_3sdp"
         android:textColor="@color/white"
         android:textSize="@dimen/_11ssp"
-        tools:text="تعداد توکن" />
+        tools:text="عدد التوكنات" />
 
       <ImageView
         android:layout_width="@dimen/_16sdp"
@@ -112,7 +112,7 @@
       android:textSize="@dimen/_9ssp"
       app:layout_constraintLeft_toLeftOf="@+id/layout_token"
       app:layout_constraintTop_toBottomOf="@+id/layout_token"
-      tools:text="کل مبلغ توکن" />
+      tools:text="إجمالي مبلغ التوكنات" />
 
   </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

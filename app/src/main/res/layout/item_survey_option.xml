@@ -92,7 +92,7 @@
         android:text="@{item.title}"
         android:textColor="@color/white"
         android:textSize="@dimen/_11ssp"
-        tools:text="عنوان گزینه راست" />
+        tools:text="عنوان الخيار الأيمن" />
 
       <TextView
         android:id="@+id/choice_right_description"
@@ -108,7 +108,7 @@
         android:text="@{item.description}"
         android:textColor="@color/grey_500"
         android:textSize="@dimen/_9ssp"
-        tools:text="توضیحات گزینه" />
+        tools:text="وصف الخيار" />
 
       <ProgressBar
         android:id="@+id/choice_right_progress"
@@ -133,7 +133,7 @@
         android:gravity="center"
         android:text="@{item.count +` `+ @string/vote +`، `+ item.tokens +` `+ @string/token }"
         android:textSize="@dimen/_11ssp"
-        tools:text="رای، توکن" />
+        tools:text="التصويت، الرمز" />
 
       <TextView
         android:id="@+id/choice_right_percent"
@@ -146,7 +146,7 @@
         android:text="@{item.weight + `%`}"
         android:textColor="@color/grey_500"
         android:textSize="@dimen/_11ssp"
-        tools:text="درصد" />
+        tools:text="النسبة المئوية" />
 
       <FrameLayout
         android:layout_width="match_parent"

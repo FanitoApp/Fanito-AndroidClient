@@ -78,7 +78,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/club_icon"
         app:layout_constraintRight_toLeftOf="@+id/club_icon"
         app:layout_constraintTop_toTopOf="@id/club_icon"
-        tools:text="عنوان سازنده نظرسنجی" />
+        tools:text="عنوان المنشئ للاستطلاع" />
 
       <!--
       <LinearLayout
@@ -170,7 +170,7 @@
         app:layout_constraintLeft_toLeftOf="@+id/layout_token"
         app:layout_constraintRight_toRightOf="@+id/club_icon"
         app:layout_constraintTop_toBottomOf="@id/club_icon"
-        tools:text="عنوان نظرسنجی" />
+        tools:text="عنوان الاستبيان" />
 
       <TextView
         android:id="@+id/voting_description"
@@ -186,7 +186,7 @@
         app:layout_constraintLeft_toLeftOf="@+id/layout_token"
         app:layout_constraintRight_toRightOf="@+id/club_icon"
         app:layout_constraintTop_toBottomOf="@id/voting_title"
-        tools:text="توضیحات نظرسنجی" />
+        tools:text="وصف الاستبيان" />
 
       <ImageView
         android:id="@+id/img_participants"
@@ -221,7 +221,7 @@
         android:textSize="@dimen/_11ssp"
         app:layout_constraintBottom_toBottomOf="@id/img_participants"
         app:layout_constraintRight_toLeftOf="@+id/participants_divider"
-        tools:text="تعداد شرکت کننده" />
+        tools:text="عدد المشاركين" />
 
       <TextView
         android:id="@+id/token_count"
@@ -235,7 +235,7 @@
         android:textSize="@dimen/_11ssp"
         app:layout_constraintBaseline_toBaselineOf="@id/participants_count"
         app:layout_constraintRight_toLeftOf="@+id/participants_count"
-        tools:text="تعداد توکن" />
+        tools:text="عدد التوكنات" />
 
       <TextView
         android:id="@+id/timer"
@@ -248,7 +248,7 @@
         android:textSize="@dimen/_11ssp"
         app:layout_constraintBaseline_toBaselineOf="@id/participants_count"
         app:layout_constraintLeft_toLeftOf="@id/layout_token"
-        tools:text="وضعیت نظرسنجی" />
+        tools:text="حالة الاستطلاع" />
 
       <View
         android:id="@+id/divider"

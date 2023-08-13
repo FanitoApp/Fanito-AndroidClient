@@ -186,7 +186,7 @@
     android:layout_marginVertical="@dimen/_7sdp"
     android:gravity="left"
     android:paddingHorizontal="@dimen/_15sdp"
-    android:text="نسخه 1.0.1"
+    android:text="الإصدار 1.0.1"
     android:textColor="@color/blue_grey_400"
     android:textSize="@dimen/_9ssp" />
 </RelativeLayout>

@@ -35,7 +35,7 @@
     android:textSize="@dimen/_14ssp"
     app:layout_constraintBottom_toTopOf="@id/name_holder"
     app:layout_constraintRight_toLeftOf="@id/profile"
-    tools:text="نام کامل کاربر" />
+    tools:text="الاسم الكامل للمستخدم" />
 
   <TextView
     android:id="@+id/user_number"
@@ -48,7 +48,7 @@
     android:textSize="@dimen/_12ssp"
     app:layout_constraintRight_toLeftOf="@id/profile"
     app:layout_constraintTop_toBottomOf="@id/name_holder"
-    tools:text="شماره کاربر" />
+    tools:text="رقم المستخدم" />
 
   <ImageView
     android:id="@+id/close"
