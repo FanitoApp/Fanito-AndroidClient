@@ -8,6 +8,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.cachedIn
 import dagger.hilt.android.lifecycle.HiltViewModel
+import io.android.fanito_androidclient.BuildConfig.BASE_URL
 import io.android.fanito_androidclient.data.DataManager
 import io.android.fanito_androidclient.data.model.others.FanClubToken
 import io.android.fanito_androidclient.data.model.others.PhotoSlider
@@ -63,25 +64,25 @@ class HomeViewModel @Inject constructor(dataManager: DataManager) :
     sliderItems.add(
       PhotoSlider(
         1,
-        "http://194.5.192.117:9000/public/3fa47b28-247b-4409-8fb2-95e3d364b19e.jpeg"
+        "$BASE_URL:9000/public/3fa47b28-247b-4409-8fb2-95e3d364b19e.jpeg"
       )
     )
     sliderItems.add(
       PhotoSlider(
         2,
-        "http://194.5.192.117:9000/public/3fa47b28-247b-4409-8fb2-95e3d3641e.jpeg"
+        "$BASE_URL:9000/public/3fa47b28-247b-4409-8fb2-95e3d3641e.jpeg"
       )
     )
     sliderItems.add(
       PhotoSlider(
         3,
-        "http://194.5.192.117:9000/public/3fa47b28-247b-4409-8fb2-95e3d36421edfc.jpeg"
+        "$BASE_URL:9000/public/3fa47b28-247b-4409-8fb2-95e3d36421edfc.jpeg"
       )
     )
     sliderItems.add(
       PhotoSlider(
         4,
-        "http://194.5.192.117:9000/public/3fa47b28-247b-4409-8fb2-95e3d36421edfcdrmj.jpeg"
+        "$BASE_URL:9000/public/3fa47b28-247b-4409-8fb2-95e3d36421edfcdrmj.jpeg"
       )
     )
     return sliderItems
